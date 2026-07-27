@@ -1,0 +1,28 @@
+{
+  "name": "moneybuddy",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "api": "npm run dev --workspace @moneybuddy/api",
+    "mobile": "npm run start --workspace @moneybuddy/mobile",
+    "mobile:android": "npm run android --workspace @moneybuddy/mobile",
+    "mobile:ios": "npm run ios --workspace @moneybuddy/mobile",
+    "mobile:web": "npm run web --workspace @moneybuddy/mobile",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

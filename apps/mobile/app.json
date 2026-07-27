@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "MoneyBuddy",
+    "slug": "moneybuddy",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "moneybuddy",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.moneybuddy.app"
+    },
+    "android": {
+      "package": "com.moneybuddy.app",
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
