@@ -1,35 +1,47 @@
+import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { tokens } from '@/src/design-system/tokens';
+import { coreRoutes } from '@/src/navigation/routes';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
+        sceneStyle: { backgroundColor: tokens.color.canvas },
+        tabBarActiveTintColor: tokens.color.primary,
+        tabBarInactiveTintColor: tokens.color.muted,
+        tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
+        tabBarStyle: {
+          backgroundColor: tokens.color.surface,
+          borderTopColor: tokens.color.border,
+          height: 84,
+          paddingBottom: 22,
+          paddingTop: 8,
+        },
+        tabBarHideOnKeyboard: true,
       }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+      {coreRoutes.map((route) => (
+        <Tabs.Screen
+          key={route.key}
+          name={route.file}
+          options={{
+            title: route.title,
+            tabBarAccessibilityLabel: `${route.title} tab`,
+            tabBarIcon: ({ color, focused, size }) => (
+              <Ionicons
+                accessibilityElementsHidden
+                color={color}
+                importantForAccessibility="no-hide-descendants"
+                name={focused ? route.activeIcon : route.icon}
+                size={size}
+              />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 }
