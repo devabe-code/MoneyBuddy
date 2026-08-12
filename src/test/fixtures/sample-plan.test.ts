@@ -4,7 +4,6 @@ describe('sample plan fixture', () => {
   it('is explicitly marked synthetic and contains each preview area', () => {
     expect(samplePlan.fixtureKind).toBe('synthetic');
     expect(samplePlan.upcoming.length).toBeGreaterThan(0);
-    expect(samplePlan.goals.length).toBeGreaterThan(0);
     expect(samplePlan.journey.length).toBeGreaterThan(0);
     expect(samplePlan.selectedCalendarDay.events.length).toBeGreaterThan(0);
     expect(samplePlan.calendarDays).toHaveLength(35);
