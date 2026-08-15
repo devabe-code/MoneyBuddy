@@ -25,3 +25,5 @@ jobs:
         run: npx expo-doctor
       - name: Verify the web-ready route bundle
         run: npx expo export --platform web --output-dir dist
+      - name: The PR Agent
+        uses: The-PR-Agent/pr-agent@v0.42.0
