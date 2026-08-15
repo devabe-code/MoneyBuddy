@@ -1,7 +1,15 @@
 import { readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 
-const enforcedRoots = ['src/design-system', 'src/features', 'src/navigation', 'src/test/fixtures'];
+const enforcedRoots = [
+  'src/bootstrap',
+  'src/design-system',
+  'src/domain',
+  'src/features',
+  'src/navigation',
+  'src/services',
+  'src/test/fixtures',
+];
 const exemptFiles = new Set(['src/design-system/components.ts']);
 
 function productionModules(directory: string): string[] {
