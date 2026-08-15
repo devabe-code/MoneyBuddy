@@ -15,7 +15,7 @@ describe('savings-goal presenter', () => {
   it('maps domain output to the reusable goal-card contract', () => {
     const goal = SYNTHETIC_SAVINGS_GOALS[0];
     expect(presentSavingsGoal({ goal, progress: defaultSavingsGoalProgressPolicy.summarize(goal) })).toMatchObject({
-      date: 'March 2027', progress: 62, remaining: '$4,560', saved: '$7,440', target: '$12,000 target',
+      date: 'March 2027', icon: 'shield-checkmark-outline', progress: 62, remaining: '$4,560', saved: '$7,440', target: '$12,000 target', tone: 'warning',
     });
   });
 });

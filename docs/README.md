@@ -117,9 +117,12 @@ API schemas into `packages/contracts`; do not create packages merely for symmetr
 ## Document map
 
 - [Architecture](./architecture.md) — target system boundaries and data model
+- [Folder conventions](./architecture/folder-conventions.md) — enforced client dependency rules
+- [Savings goal repository contract](./contracts/savings-goal-repository.md) — P0 sample data port
 - [Technical specification](./tech_spec.md) — phased delivery and intended stack
 - [Product PRD](./product_prd.md) — users, outcomes, requirements, and metrics
 - [Design PRD](./design_prd.md) — information architecture and visual behavior
 - [Epics and stories](./epics_and_stories.md) — delivery-ready backlog
 - [Jira import mapping](./jira_import_mapping.md) — field mapping and validation
 - [MB-001 implementation](./implementation/MB-001.md) — core navigation acceptance evidence
+- [MB-002 implementation](./implementation/MB-002.md) — feature/domain boundary acceptance evidence

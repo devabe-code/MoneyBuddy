@@ -3,11 +3,11 @@ export type CurrencyCode = 'USD';
 export type SavingsGoal = Readonly<{
   currency: CurrencyCode;
   id: string;
+  kind: 'custom' | 'emergency-fund' | 'vehicle';
   name: string;
   savedMinor: bigint;
   targetDate?: string;
   targetMinor: bigint;
-  tone: 'default' | 'info' | 'warning';
 }>;
 
 export function defineSavingsGoal(input: SavingsGoal): SavingsGoal {
