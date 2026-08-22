@@ -23,6 +23,7 @@ export default function RootLayout() {
         }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="about" options={{ title: 'How MoneyBuddy works' }} />
+        <Stack.Screen name="state-preview" options={{ title: 'App state preview' }} />
         <Stack.Screen name="+not-found" options={{ title: 'Page not found' }} />
       </Stack>
       <StatusBar style="dark" />

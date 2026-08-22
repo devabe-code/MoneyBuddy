@@ -8,7 +8,7 @@ export type SavingsGoalOverviewState =
   | Readonly<{ kind: 'loading' }>
   | Readonly<{ kind: 'empty' }>
   | Readonly<{ kind: 'error'; message: string }>
-  | Readonly<{ items: readonly SavingsGoalOverviewItem[]; kind: 'offline'; message: string }>
+  | Readonly<{ items: readonly SavingsGoalOverviewItem[]; kind: 'offline'; message: string; updatedAt?: string }>
   | Readonly<{ items: readonly SavingsGoalOverviewItem[]; kind: 'partial' | 'ready' | 'stale'; updatedAt: string }>;
 
 export type LoadSavingsGoalOverview = () => Promise<SavingsGoalOverviewState>;
@@ -25,7 +25,14 @@ export function createLoadSavingsGoalOverview({
   return async () => {
     const result = await repository.list();
     if (result.kind === 'error') return { kind: 'error', message: result.message };
-    if (result.kind === 'offline') return { kind: 'offline', message: result.message, items: summarize(result.cachedData ?? []) };
+    if (result.kind === 'offline') {
+      return {
+        items: summarize(result.cachedData ?? []),
+        kind: 'offline',
+        message: result.message,
+        updatedAt: result.cachedAt,
+      };
+    }
     if (result.data.length === 0) return { kind: 'empty' };
     return {
       items: summarize(result.data),

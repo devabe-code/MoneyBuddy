@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react-native';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import type { SavingsGoalOverviewState } from './load-savings-goal-overview';
 import { SavingsGoalsScreen } from './savings-goals-screen';
@@ -38,9 +38,44 @@ describe('SavingsGoalsScreen', () => {
   });
 
   it('retains cached summaries while offline', async () => {
-    await renderState({ items: [item], kind: 'offline', message: 'No connection.' });
+    await renderState({ items: [item], kind: 'offline', message: 'No connection.', updatedAt: '2026-09-18T12:00:00.000Z' });
     expect(screen.getByText('Showing the last synthetic snapshot.')).toBeOnTheScreen();
+    expect(screen.getByText('Last updated Sep 18, 2026, 12:00 PM UTC')).toBeOnTheScreen();
     expect(screen.getByRole('progressbar')).toBeOnTheScreen();
+  });
+
+  it('retries recoverable failures through the shared action', async () => {
+    const loadOverview = jest
+      .fn<Promise<SavingsGoalOverviewState>, []>()
+      .mockResolvedValueOnce({ kind: 'error', message: 'Safe failure.' })
+      .mockResolvedValueOnce({ items: [item], kind: 'ready', updatedAt: '2026-09-18T12:00:00.000Z' });
+    await render(<SavingsGoalsScreen loadOverview={loadOverview} />);
+    await waitFor(() => expect(screen.getByText('Unable to load goals')).toBeOnTheScreen());
+
+    await act(async () => {
+      fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
+    });
+
+    await waitFor(() => expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }));
+    expect(loadOverview).toHaveBeenCalledTimes(2);
+  });
+
+  it('ignores an older request after the loader is replaced', async () => {
+    let resolveOlderRequest: (state: SavingsGoalOverviewState) => void = () => undefined;
+    const olderLoader = () => new Promise<SavingsGoalOverviewState>((resolve) => { resolveOlderRequest = resolve; });
+    const currentLoader = async (): Promise<SavingsGoalOverviewState> => ({
+      items: [item],
+      kind: 'ready',
+      updatedAt: '2026-09-18T12:00:00.000Z',
+    });
+    const view = await render(<SavingsGoalsScreen loadOverview={olderLoader} />);
+
+    await view.rerender(<SavingsGoalsScreen loadOverview={currentLoader} />);
+    await waitFor(() => expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }));
+    await act(async () => { resolveOlderRequest({ kind: 'error', message: 'Outdated failure.' }); });
+
+    expect(screen.queryByText('Outdated failure.')).not.toBeOnTheScreen();
+    expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 });
   });
 
   it('converts unexpected repository rejection into a safe error state', async () => {

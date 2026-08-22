@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 import type { Ionicons } from '@expo/vector-icons';
+import type { Href } from 'expo-router';
 
 type IconName = ComponentProps<typeof Ionicons>['name'];
 
@@ -13,6 +14,7 @@ export type CoreRoute = {
 };
 
 export const MONEYBUDDY_SCHEME = 'moneybuddy' as const;
+export const supportRoutes = Object.freeze({ statePreview: '/state-preview' as Href });
 
 export const coreRoutes: readonly CoreRoute[] = [
   { key: 'today', title: 'Today', file: 'index', href: '/', icon: 'today-outline', activeIcon: 'today' },

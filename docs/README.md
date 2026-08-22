@@ -58,7 +58,7 @@ The repository currently contains:
 
 - Expo SDK 54, React Native, TypeScript, and Expo Router;
 - the Today, Calendar, Goals, and Journey navigation shell;
-- shared design tokens, UI/state primitives, and synthetic preview fixtures;
+- shared design tokens, accessible common-state components, and synthetic preview fixtures;
 - Expo Go-compatible local development;
 - linting, strict TypeScript, navigation tests, and GitHub Actions quality checks.
 
@@ -119,6 +119,7 @@ API schemas into `packages/contracts`; do not create packages merely for symmetr
 - [Architecture](./architecture.md) — target system boundaries and data model
 - [Folder conventions](./architecture/folder-conventions.md) — enforced client dependency rules
 - [Savings goal repository contract](./contracts/savings-goal-repository.md) — P0 sample data port
+- [Common app-state contract](./contracts/common-app-states.md) — shared loading, empty, error, offline, stale, and partial behavior
 - [Technical specification](./tech_spec.md) — phased delivery and intended stack
 - [Product PRD](./product_prd.md) — users, outcomes, requirements, and metrics
 - [Design PRD](./design_prd.md) — information architecture and visual behavior
@@ -126,3 +127,4 @@ API schemas into `packages/contracts`; do not create packages merely for symmetr
 - [Jira import mapping](./jira_import_mapping.md) — field mapping and validation
 - [MB-001 implementation](./implementation/MB-001.md) — core navigation acceptance evidence
 - [MB-002 implementation](./implementation/MB-002.md) — feature/domain boundary acceptance evidence
+- [MB-003 implementation](./implementation/MB-003.md) — common app-state acceptance evidence

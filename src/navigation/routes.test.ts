@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { coreRoutes, MONEYBUDDY_SCHEME, resolveCoreRoute } from './routes';
+import { coreRoutes, MONEYBUDDY_SCHEME, resolveCoreRoute, supportRoutes } from './routes';
 
 describe('core navigation contract', () => {
   it('has the four required destinations with unique routes and route files', () => {
@@ -28,5 +28,10 @@ describe('core navigation contract', () => {
   it('declares the tested custom URL scheme in Expo config', () => {
     const config = JSON.parse(readFileSync(path.join(process.cwd(), 'app.json'), 'utf8'));
     expect(config.expo.scheme).toBe(MONEYBUDDY_SCHEME);
+  });
+
+  it('keeps the state preview route linked to a real route module', () => {
+    expect(supportRoutes.statePreview).toBe('/state-preview');
+    expect(existsSync(path.join(process.cwd(), 'app', 'state-preview.tsx'))).toBe(true);
   });
 });

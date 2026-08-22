@@ -21,12 +21,13 @@ interface SavingsGoalRepository {
 | Result | Required fields | Feature behavior |
 | --- | --- | --- |
 | Success | `data`, `freshness`, `updatedAt` | Summarize goals; empty data becomes the empty state |
-| Offline | safe `message`, optional `cachedData` | Show offline notice and retain cached summaries when present |
+| Offline | safe `message`, optional `cachedData`, optional `cachedAt` | Show offline notice, freshness, and cached summaries when present |
 | Error | safe `message` | Show an error without adapter details or sensitive values |
 
 Success freshness is `fresh`, `stale`, or `partial`. It maps to ready, stale, and
 partial feature states respectively. Loading is a feature lifecycle state before
-the repository promise settles.
+the repository promise settles. `cachedAt`, when present, is an ISO instant that
+the feature presenter converts to a visible last-updated label.
 
 ## Domain record
 
