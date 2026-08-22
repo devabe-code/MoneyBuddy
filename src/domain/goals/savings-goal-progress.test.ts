@@ -2,7 +2,7 @@ import { defineSavingsGoal } from './savings-goal';
 import { defaultSavingsGoalProgressPolicy, type SavingsGoalProgressPolicy } from './savings-goal-progress';
 
 function goal(savedMinor: bigint, targetMinor = 1_200_000n) {
-  return defineSavingsGoal({ currency: 'USD', id: 'synthetic-goal', name: 'Synthetic goal', savedMinor, targetMinor, tone: 'default' });
+  return defineSavingsGoal({ currency: 'USD', id: 'synthetic-goal', kind: 'custom', name: 'Synthetic goal', savedMinor, targetMinor });
 }
 
 describe('SavingsGoalProgressPolicy', () => {

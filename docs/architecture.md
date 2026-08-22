@@ -2,8 +2,8 @@
 
 ## Status
 
-- **Document state:** proposed target architecture
-- **Current implementation:** root-level Expo SDK 54 starter
+- **Document state:** active architecture with phased target additions
+- **Current implementation:** Expo SDK 54 shell with enforced client boundaries
 - **Primary client:** iOS and Android
 - **Future client:** responsive web application
 
@@ -68,6 +68,13 @@ flowchart TB
 - Zustand, if adopted, holds short-lived client state such as scenario drafts and
   onboarding progress—not server records.
 - Storage, analytics, auth, and networking are adapters behind interfaces.
+
+The implemented folder and import rules are defined in
+[Folder conventions](./architecture/folder-conventions.md). MB-002 proves the
+direction with the Goals slice: a route imports a feature screen and a composition
+root; the feature depends on repository and domain interfaces; a synthetic adapter
+implements the repository without entering the feature or domain layers. Static
+architecture tests reject forbidden imports.
 
 ## Server architecture
 

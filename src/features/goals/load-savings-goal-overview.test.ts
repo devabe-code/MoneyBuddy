@@ -24,7 +24,7 @@ describe('load savings-goal overview', () => {
   it('preserves cached items while offline', async () => {
     const state = await loader({ cachedData: SYNTHETIC_SAVINGS_GOALS, kind: 'offline', message: 'No connection.' })();
     expect(state).toMatchObject({ kind: 'offline', message: 'No connection.' });
-    expect('items' in state ? state.items).toHaveLength(2);
+    expect('items' in state ? state.items : []).toHaveLength(2);
   });
 
   it('maps repository failures to safe feature errors', async () => {

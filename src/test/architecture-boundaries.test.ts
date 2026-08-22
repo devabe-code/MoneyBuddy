@@ -3,6 +3,8 @@ import path from 'node:path';
 
 type BoundaryRule = Readonly<{ forbidden: RegExp; root: string }>;
 
+const importSpecifierPattern = /(?:import|export)\s+(?:type\s+)?(?:[^'";]+?\s+from\s+)?['"]([^'"]+)['"]/g;
+
 const rules: readonly BoundaryRule[] = [
   { root: 'src/domain', forbidden: /(?:react-native|expo|@\/src\/(?:bootstrap|design-system|features|services|test))/ },
   { root: 'src/services', forbidden: /@\/src\/(?:app|bootstrap|design-system|features|navigation|test)/ },
@@ -19,9 +21,15 @@ function productionFiles(directory: string): string[] {
   });
 }
 
+function importSpecifiers(filePath: string) {
+  return Array.from(readFileSync(filePath, 'utf8').matchAll(importSpecifierPattern), (match) => match[1]);
+}
+
 describe('architecture import boundaries', () => {
   it.each(rules)('$root does not reach across forbidden layers', ({ forbidden, root }) => {
-    const violations = productionFiles(root).filter((filePath) => forbidden.test(readFileSync(filePath, 'utf8')));
+    const violations = productionFiles(root).filter((filePath) =>
+      importSpecifiers(filePath).some((specifier) => forbidden.test(specifier)),
+    );
     expect(violations).toEqual([]);
   });
 });

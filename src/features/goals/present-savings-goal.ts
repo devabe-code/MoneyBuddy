@@ -1,6 +1,12 @@
 import type { SavingsGoalOverviewItem } from './load-savings-goal-overview';
 import type { GoalProgress } from './goal-progress-card';
 
+const presentationByGoalKind = {
+  custom: { icon: 'flag-outline', tone: 'default' },
+  'emergency-fund': { icon: 'shield-checkmark-outline', tone: 'warning' },
+  vehicle: { icon: 'car-sport-outline', tone: 'info' },
+} as const;
+
 export function formatUsdMinor(minor: bigint) {
   const absolute = minor < 0n ? -minor : minor;
   const dollars = absolute / 100n;
@@ -11,15 +17,16 @@ export function formatUsdMinor(minor: bigint) {
 }
 
 export function presentSavingsGoal({ goal, progress }: SavingsGoalOverviewItem): GoalProgress {
+  const presentation = presentationByGoalKind[goal.kind];
   return {
     date: goal.targetDate ? formatTargetMonth(goal.targetDate) : undefined,
-    icon: 'flag-outline',
+    icon: presentation.icon,
     name: goal.name,
     progress: progress.progressPercent,
     remaining: formatUsdMinor(progress.remainingMinor),
     saved: formatUsdMinor(goal.savedMinor),
     target: `${formatUsdMinor(goal.targetMinor)} target`,
-    tone: goal.tone,
+    tone: presentation.tone,
   };
 }
 

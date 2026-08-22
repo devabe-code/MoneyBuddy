@@ -3,10 +3,10 @@ import { defineSavingsGoal } from './savings-goal';
 const validGoal = {
   currency: 'USD' as const,
   id: 'synthetic-emergency-fund',
+  kind: 'emergency-fund' as const,
   name: 'Synthetic emergency fund',
   savedMinor: 744_000n,
   targetMinor: 1_200_000n,
-  tone: 'warning' as const,
 };
 
 describe('defineSavingsGoal', () => {
