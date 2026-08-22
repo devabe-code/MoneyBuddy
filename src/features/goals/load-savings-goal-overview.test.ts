@@ -22,8 +22,8 @@ describe('load savings-goal overview', () => {
   });
 
   it('preserves cached items while offline', async () => {
-    const state = await loader({ cachedData: SYNTHETIC_SAVINGS_GOALS, kind: 'offline', message: 'No connection.' })();
-    expect(state).toMatchObject({ kind: 'offline', message: 'No connection.' });
+    const state = await loader({ cachedAt: '2026-09-18T12:00:00.000Z', cachedData: SYNTHETIC_SAVINGS_GOALS, kind: 'offline', message: 'No connection.' })();
+    expect(state).toMatchObject({ kind: 'offline', message: 'No connection.', updatedAt: '2026-09-18T12:00:00.000Z' });
     expect('items' in state ? state.items : []).toHaveLength(2);
   });
 

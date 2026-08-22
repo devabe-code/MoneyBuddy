@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react-native';
+import { render, screen, waitFor } from '@testing-library/react-native';
 
 import CalendarScreen from '@/app/(tabs)/calendar';
 import GoalsScreen from '@/app/(tabs)/goals';
@@ -6,6 +6,7 @@ import TodayScreen from '@/app/(tabs)/index';
 import JourneyScreen from '@/app/(tabs)/journey';
 import NotFoundScreen from '@/app/+not-found';
 import AboutScreen from '@/app/about';
+import StatePreviewRoute from '@/app/state-preview';
 
 describe('route composition', () => {
   it.each([
@@ -14,9 +15,11 @@ describe('route composition', () => {
     ['Goals', GoalsScreen, 'Goals'],
     ['Journey', JourneyScreen, 'Journey'],
     ['About', AboutScreen, 'A plan you can explain'],
+    ['State preview', StatePreviewRoute, 'App state preview'],
     ['Not found', NotFoundScreen, 'That page is not in the plan'],
   ])('renders the %s route from reusable pieces', async (_name, Route, heading) => {
     await render(<Route />);
     expect(screen.getByRole('header', { name: heading })).toBeOnTheScreen();
+    if (_name === 'Goals') await waitFor(() => expect(screen.queryByText('Loading goals')).not.toBeOnTheScreen());
   });
 });

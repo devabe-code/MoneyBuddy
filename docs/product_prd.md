@@ -166,6 +166,8 @@ journey
 - Destructive actions state scope, consequence, and recovery options.
 - Offline/stale information is visibly labeled with last-updated time.
 - Loading skeletons preserve layout; errors preserve user-entered drafts.
+- Shared state patterns provide a plain-language title, explanation, non-color
+  signal, and recovery action or freshness metadata when the state calls for it.
 
 ## Metrics
 

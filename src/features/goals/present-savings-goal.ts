@@ -16,6 +16,21 @@ export function formatUsdMinor(minor: bigint) {
   return `${sign}$${dollars.toLocaleString('en-US')}${fraction}`;
 }
 
+export function formatFreshnessLabel(instant: string) {
+  const date = new Date(instant);
+  if (Number.isNaN(date.getTime())) return 'Last updated time unavailable';
+  const formatted = new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    month: 'short',
+    timeZone: 'UTC',
+    timeZoneName: 'short',
+    year: 'numeric',
+  }).format(date);
+  return `Last updated ${formatted}`;
+}
+
 export function presentSavingsGoal({ goal, progress }: SavingsGoalOverviewItem): GoalProgress {
   const presentation = presentationByGoalKind[goal.kind];
   return {

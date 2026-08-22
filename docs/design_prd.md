@@ -274,6 +274,13 @@ Every primary screen must define:
 | Error | Plain-language cause, recovery, and retained draft |
 | Success | Confirm result without blocking continued work |
 
+The P0 `CommonState` component is the shared implementation for loading, partial,
+empty, offline, stale, and error rows above. Its panel form is the default; its
+inline form is reserved for usable content that needs a compact status. Feature
+content stays visible for partial, stale, and cached-offline results. The synthetic
+gallery linked from About is the review surface for copy, scaling, focus order,
+contrast, and assistive-technology semantics.
+
 ## Design validation plan
 
 1. Test onboarding comprehension with five target users before P1 build-out.
