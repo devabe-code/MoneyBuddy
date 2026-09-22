@@ -1,0 +1,1469 @@
+"Work Type","Summary","Description","Work Item ID","Parent","Status","Priority","Phase","External ID","Tshirt Size","Story Points","Labels","Labels","Labels","Labels","Labels"
+"Epic","[MB-E01] Foundation","Outcome
+Maintainable, testable MoneyBuddy shell
+
+Delivery phase
+P0
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","1","","To Do","Highest","P0","MB-E01","","","moneybuddy","p0","epic","foundation",""
+"Epic","[MB-E02] Financial profile","Outcome
+Inputs needed for an explainable plan
+
+Delivery phase
+P1
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","2","","To Do","High","P1","MB-E02","","","moneybuddy","p1","epic","financial-profile",""
+"Epic","[MB-E03] Cashflow engine","Outcome
+Deterministic dated projection
+
+Delivery phase
+P1
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","3","","To Do","High","P1","MB-E03","","","moneybuddy","p1","epic","cashflow-engine",""
+"Epic","[MB-E04] Calendar experience","Outcome
+Understand money by day/pay period
+
+Delivery phase
+P1
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","4","","To Do","High","P1","MB-E04","","","moneybuddy","p1","epic","calendar-experience",""
+"Epic","[MB-E05] Savings goals","Outcome
+Create and manage targets
+
+Delivery phase
+P2
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","5","","To Do","Medium","P2","MB-E05","","","moneybuddy","p2","epic","savings-goals",""
+"Epic","[MB-E06] Strategy modeling","Outcome
+Safely compare routes to a goal
+
+Delivery phase
+P2
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","6","","To Do","Medium","P2","MB-E06","","","moneybuddy","p2","epic","strategy-modeling",""
+"Epic","[MB-E07] Identity and persistence","Outcome
+Secure cross-device plan ownership
+
+Delivery phase
+P3
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","7","","To Do","Medium","P3","MB-E07","","","moneybuddy","p3","epic","identity-and-persistence",""
+"Epic","[MB-E08] Milestone journey","Outcome
+Durable progress history and motivation
+
+Delivery phase
+P3
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","8","","To Do","Medium","P3","MB-E08","","","moneybuddy","p3","epic","milestone-journey",""
+"Epic","[MB-E09] Bank connectivity","Outcome
+Secure read-only institution data
+
+Delivery phase
+P4
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","9","","To Do","Low","P4","MB-E09","","","moneybuddy","p4","epic","bank-connectivity",""
+"Epic","[MB-E10] Reconciliation","Outcome
+Explain projected-versus-actual changes
+
+Delivery phase
+P4
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","10","","To Do","Low","P4","MB-E10","","","moneybuddy","p4","epic","reconciliation",""
+"Epic","[MB-E11] Quality and release","Outcome
+Secure, accessible, observable delivery
+
+Delivery phase
+P0–P5
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","11","","To Do","High","P0–P5","MB-E11","","","moneybuddy","p0-p5","epic","quality-and-release",""
+"Epic","[MB-E12] Web readiness","Outcome
+Proven reusable domain and contracts
+
+Delivery phase
+P5
+
+Scope
+This epic groups the MoneyBuddy work required to deliver the stated outcome. Child stories carry implementation-level acceptance criteria and inherit the shared Definition of Done.
+
+Source
+docs/epics_and_stories.md","12","","To Do","Lowest","P5","MB-E12","","","moneybuddy","p5","epic","web-readiness",""
+"Story","[MB-001] Navigate the core app areas so I understand what MoneyBuddy offers","User story
+As a user, I can navigate the core app areas so I understand what MoneyBuddy offers.
+
+Acceptance criteria
+- Today, Calendar, Goals, and appropriate Journey visibility.
+- deep links resolve.
+- back behavior works.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","101","1","To Do","Highest","P0","MB-001","M","5","moneybuddy","p0","mobile","navigation",""
+"Story","[MB-002] Establish feature and domain boundaries so financial logic is not implemented in screens","User story
+As a developer, I have feature and domain boundaries so financial logic is not implemented in screens.
+
+Acceptance criteria
+- Folder conventions documented.
+- sample feature uses repository and domain interfaces.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","102","1","To Do","Highest","P0","MB-002","M","5","moneybuddy","p0","architecture","developer-experience",""
+"Story","[MB-003] See consistent loading, empty, error, and offline patterns","User story
+As a user, I see consistent loading, empty, error, and offline patterns.
+
+Acceptance criteria
+- Accessible common-state components exist and are demonstrated with fixtures.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","103","1","To Do","Highest","P0","MB-003","M","5","moneybuddy","p0","design-system","accessibility",""
+"Story","[MB-004] Represent money and dates safely","User story
+As a developer, I can represent money and dates safely.
+
+Acceptance criteria
+- Integer minor-unit and local-date helpers exist with boundary and serialization tests.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","104","1","To Do","Highest","P0","MB-004","M","5","moneybuddy","p0","domain","finance",""
+"Story","[MB-005] Pull requests are protected by automated quality checks","User story
+As a team, pull requests are protected by automated quality checks.
+
+Acceptance criteria
+- CI runs lint, format, types, tests, and Expo Doctor.
+- failures block merge.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: S
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","105","1","To Do","Highest","P0","MB-005","S","2","moneybuddy","p0","ci","quality",""
+"Story","[MB-006] Use realistic synthetic scenarios without real financial data","User story
+As a tester, I can use realistic synthetic scenarios without real financial data.
+
+Acceptance criteria
+- Versioned fixtures cover regular, variable, low-surplus, and already-funded cases.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: S
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","106","1","To Do","Highest","P0","MB-006","S","2","moneybuddy","p0","testing","privacy",""
+"Story","[MB-007] Decide which backend providers to implement","User story
+As an engineer, I know which backend providers to implement.
+
+Acceptance criteria
+- ADRs resolve auth, database host, ORM, and initial API layout.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","107","1","To Do","Highest","P0","MB-007","M","5","moneybuddy","p0","architecture","decision",""
+"Story","[MB-008] Install internal preview builds","User story
+As a team, I can install internal preview builds.
+
+Acceptance criteria
+- EAS development/preview profiles documented and validated on iOS and Android.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0
+Tshirt size: M
+Parent epic: MB-E01 Foundation
+
+Source
+docs/epics_and_stories.md","108","1","To Do","Highest","P0","MB-008","M","5","moneybuddy","p0","devops","mobile",""
+"Story","[MB-101] Set locale, currency, and time zone","User story
+As a user, I can set locale, currency, and time zone.
+
+Acceptance criteria
+- Defaults are visible/editable.
+- unsupported currencies are blocked with explanation.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: S
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","109","2","To Do","High","P1","MB-101","S","2","moneybuddy","p1","profile","localization",""
+"Story","[MB-102] Enter gross pay and pay frequency","User story
+As a salaried user, I can enter gross pay and pay frequency.
+
+Acceptance criteria
+- Weekly, biweekly, semimonthly, and monthly schedules validate correctly.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","110","2","To Do","High","P1","MB-102","M","5","moneybuddy","p1","income","forms",""
+"Story","[MB-103] Describe typical gross pay","User story
+As an hourly user, I can describe typical gross pay.
+
+Acceptance criteria
+- Hours/rate or average-pay approach is explicit.
+- variability warning appears.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","111","2","To Do","High","P1","MB-103","M","5","moneybuddy","p1","income","forms",""
+"Story","[MB-104] Provide supported tax assumptions","User story
+As a user, I can provide supported tax assumptions.
+
+Acceptance criteria
+- Tax year, jurisdiction, filing status, and deductions are labeled and editable.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","112","2","To Do","High","P1","MB-104","M","5","moneybuddy","p1","tax","profile",""
+"Story","[MB-105] Override estimated net pay","User story
+As a user, I can override estimated net pay.
+
+Acceptance criteria
+- Override and estimate remain distinguishable and reversible.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: S
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","113","2","To Do","High","P1","MB-105","S","2","moneybuddy","p1","tax","user-control",""
+"Story","[MB-106] Resume incomplete setup","User story
+As a returning user, I can resume incomplete setup.
+
+Acceptance criteria
+- Draft survives restart.
+- next incomplete step is identified.
+- validation is retained.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E02 Financial profile
+
+Source
+docs/epics_and_stories.md","114","2","To Do","High","P1","MB-106","M","5","moneybuddy","p1","onboarding","offline",""
+"Story","[MB-201] Add recurring expenses and transfers","User story
+As a user, I can add recurring expenses and transfers.
+
+Acceptance criteria
+- Amount, frequency, next date, start/end, category, and edit/archive work.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","115","3","To Do","High","P1","MB-201","M","5","moneybuddy","p1","cashflow","forms",""
+"Story","[MB-202] Receive a versioned net-pay estimate","User story
+As a user, I receive a versioned net-pay estimate.
+
+Acceptance criteria
+- Supported case produces breakdown and assumptions.
+- unsupported case is explicit.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: L
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","116","3","To Do","High","P1","MB-202","L","8","moneybuddy","p1","tax","domain",""
+"Story","[MB-203] Receive dated events for the next 12 months","User story
+As a user, I receive dated events for the next 12 months.
+
+Acceptance criteria
+- Recurrence tests cover leap year, DST, month-end, semimonthly, and ordering.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: L
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","117","3","To Do","High","P1","MB-203","L","8","moneybuddy","p1","cashflow","domain",""
+"Story","[MB-204] See a projected running balance","User story
+As a user, I can see a projected running balance.
+
+Acceptance criteria
+- Balance is derived from ordered events with documented same-day ordering.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","118","3","To Do","High","P1","MB-204","M","5","moneybuddy","p1","forecast","domain",""
+"Story","[MB-205] I understand incomplete or risky projections","User story
+As a user, I understand incomplete or risky projections.
+
+Acceptance criteria
+- Missing inputs, negative balances, and unsupported rules return structured warnings.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","119","3","To Do","High","P1","MB-205","M","5","moneybuddy","p1","forecast","content",""
+"Story","[MB-206] Reproduce a projection","User story
+As a developer, I can reproduce a projection.
+
+Acceptance criteria
+- Input snapshot, engine version, rule versions, and output fixture are serializable.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E03 Cashflow engine
+
+Source
+docs/epics_and_stories.md","120","3","To Do","High","P1","MB-206","M","5","moneybuddy","p1","forecast","auditability",""
+"Story","[MB-301] Scan a month for income and outflow days","User story
+As a user, I can scan a month for income and outflow days.
+
+Acceptance criteria
+- Cells have concise non-color signals.
+- selected/today states are accessible.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: L
+Parent epic: MB-E04 Calendar experience
+
+Source
+docs/epics_and_stories.md","121","4","To Do","High","P1","MB-301","L","8","moneybuddy","p1","calendar","mobile",""
+"Story","[MB-302] Inspect all activity on a date","User story
+As a user, I can inspect all activity on a date.
+
+Acceptance criteria
+- Day detail groups planned/estimated values and shows running-balance change.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E04 Calendar experience
+
+Source
+docs/epics_and_stories.md","122","4","To Do","High","P1","MB-302","M","5","moneybuddy","p1","calendar","cashflow",""
+"Story","[MB-303] Understand a paycheck from gross to net","User story
+As a user, I can understand a paycheck from gross to net.
+
+Acceptance criteria
+- Gross, each deduction/estimate, net, source, and assumptions are shown.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E04 Calendar experience
+
+Source
+docs/epics_and_stories.md","123","4","To Do","High","P1","MB-303","M","5","moneybuddy","p1","calendar","tax",""
+"Story","[MB-304] Use an agenda alternative","User story
+As a screen-reader user, I can use an agenda alternative.
+
+Acceptance criteria
+- All calendar information and actions are available in logical list order.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E04 Calendar experience
+
+Source
+docs/epics_and_stories.md","124","4","To Do","High","P1","MB-304","M","5","moneybuddy","p1","accessibility","calendar",""
+"Story","[MB-305] Edit a source rule from an event","User story
+As a user, I can edit a source rule from an event.
+
+Acceptance criteria
+- Scope is clear.
+- future projection refreshes.
+- destructive consequences are confirmed.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P1
+Tshirt size: M
+Parent epic: MB-E04 Calendar experience
+
+Source
+docs/epics_and_stories.md","125","4","To Do","High","P1","MB-305","M","5","moneybuddy","p1","calendar","cashflow",""
+"Story","[MB-401] Create a savings goal","User story
+As a user, I can create a savings goal.
+
+Acceptance criteria
+- Title, target, current saved, optional date, priority, and notes validate.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E05 Savings goals
+
+Source
+docs/epics_and_stories.md","126","5","To Do","Medium","P2","MB-401","M","5","moneybuddy","p2","goals","forms",""
+"Story","[MB-402] Edit, pause, archive, restore, and complete a goal","User story
+As a user, I can edit, pause, archive, restore, and complete a goal.
+
+Acceptance criteria
+- State transitions preserve history and require confirmation where destructive.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E05 Savings goals
+
+Source
+docs/epics_and_stories.md","127","5","To Do","Medium","P2","MB-402","M","5","moneybuddy","p2","goals","lifecycle",""
+"Story","[MB-403] See progress and a projected completion date","User story
+As a user, I see progress and a projected completion date.
+
+Acceptance criteria
+- Amount, percent, status, contribution, and date reconcile with forecast output.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E05 Savings goals
+
+Source
+docs/epics_and_stories.md","128","5","To Do","Medium","P2","MB-403","M","5","moneybuddy","p2","goals","forecast",""
+"Story","[MB-404] Set priorities","User story
+As a user with multiple goals, I can set priorities.
+
+Acceptance criteria
+- Allocation conflicts and insufficient surplus are explained before apply.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: L
+Parent epic: MB-E05 Savings goals
+
+Source
+docs/epics_and_stories.md","129","5","To Do","Medium","P2","MB-404","L","8","moneybuddy","p2","goals","allocation",""
+"Story","[MB-405] I understand when a goal is unreachable","User story
+As a user, I understand when a goal is unreachable.
+
+Acceptance criteria
+- No false date.
+- limiting input and review options are identified neutrally.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: S
+Parent epic: MB-E05 Savings goals
+
+Source
+docs/epics_and_stories.md","130","5","To Do","Medium","P2","MB-405","S","2","moneybuddy","p2","goals","content",""
+"Story","[MB-501] Model a fixed contribution per paycheck","User story
+As a user, I can model a fixed contribution per paycheck.
+
+Acceptance criteria
+- Draft recalculates without mutating the active strategy.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","131","6","To Do","Medium","P2","MB-501","M","5","moneybuddy","p2","strategy","forecast",""
+"Story","[MB-502] Model a percentage contribution","User story
+As a user, I can model a percentage contribution.
+
+Acceptance criteria
+- Percentage uses basis points and shows resulting paycheck amount.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","132","6","To Do","Medium","P2","MB-502","M","5","moneybuddy","p2","strategy","finance",""
+"Story","[MB-503] Compare three strategies consistently","User story
+As a user, I can compare three strategies consistently.
+
+Acceptance criteria
+- Shared inputs and aligned metrics.
+- table/text alternative.
+- no option is implied best.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: L
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","133","6","To Do","Medium","P2","MB-503","L","8","moneybuddy","p2","strategy","visualization",""
+"Story","[MB-504] Inspect a savings table","User story
+As a user, I can inspect a savings table.
+
+Acceptance criteria
+- Balances by chosen interval reconcile with completion date and chart.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","134","6","To Do","Medium","P2","MB-504","M","5","moneybuddy","p2","strategy","table",""
+"Story","[MB-505] I explicitly apply or discard a draft","User story
+As a user, I explicitly apply or discard a draft.
+
+Acceptance criteria
+- Review summarizes changed allocations/dates.
+- cancel leaves baseline unchanged.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","135","6","To Do","Medium","P2","MB-505","M","5","moneybuddy","p2","strategy","user-control",""
+"Story","[MB-506] Compare a changed result with the prior projection","User story
+As a user, I can compare a changed result with the prior projection.
+
+Acceptance criteria
+- Material delta and contributing inputs are summarized and snapshotted.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P2
+Tshirt size: M
+Parent epic: MB-E06 Strategy modeling
+
+Source
+docs/epics_and_stories.md","136","6","To Do","Medium","P2","MB-506","M","5","moneybuddy","p2","strategy","explainability",""
+"Story","[MB-601] Create an account and sign in securely","User story
+As a user, I can create an account and sign in securely.
+
+Acceptance criteria
+- Chosen auth flows, validation, secure token storage, and session renewal pass.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","137","7","To Do","Medium","P3","MB-601","L","8","moneybuddy","p3","auth","security",""
+"Story","[MB-602] Recover access and sign out all relevant sessions","User story
+As a user, I can recover access and sign out all relevant sessions.
+
+Acceptance criteria
+- Recovery avoids account enumeration and revocation behavior is documented.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: M
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","138","7","To Do","Medium","P3","MB-602","M","5","moneybuddy","p3","auth","security",""
+"Story","[MB-603] Synchronize plan synchronizes across devices","User story
+As a user, my plan synchronizes across devices.
+
+Acceptance criteria
+- API persists all plan entities with authorization and concurrency tests.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","139","7","To Do","Medium","P3","MB-603","L","8","moneybuddy","p3","api","database",""
+"Story","[MB-604] Read recent plan data","User story
+As an offline user, I can read recent plan data.
+
+Acceptance criteria
+- Cached content has freshness label.
+- unsafe writes are blocked or safely queued.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","140","7","To Do","Medium","P3","MB-604","L","8","moneybuddy","p3","offline","sync",""
+"Story","[MB-605] Export my data","User story
+As a user, I can export my data.
+
+Acceptance criteria
+- Machine-readable export covers documented user-owned data.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: M
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","141","7","To Do","Medium","P3","MB-605","M","5","moneybuddy","p3","privacy","data-control",""
+"Story","[MB-606] Delete my account","User story
+As a user, I can delete my account.
+
+Acceptance criteria
+- Re-auth, scope preview, confirmation, deletion workflow, and completion receipt exist.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E07 Identity and persistence
+
+Source
+docs/epics_and_stories.md","142","7","To Do","Medium","P3","MB-606","L","8","moneybuddy","p3","privacy","security",""
+"Story","[MB-701] Create a milestone from a template or custom form","User story
+As a user, I can create a milestone from a template or custom form.
+
+Acceptance criteria
+- Emergency, car, home, education, retirement, and custom paths use goal data.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: M
+Parent epic: MB-E08 Milestone journey
+
+Source
+docs/epics_and_stories.md","143","8","To Do","Medium","P3","MB-701","M","5","moneybuddy","p3","journey","goals",""
+"Story","[MB-702] View a roadmap of milestones","User story
+As a user, I can view a roadmap of milestones.
+
+Acceptance criteria
+- Completed, active, paused, and future states are ordered and accessible.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E08 Milestone journey
+
+Source
+docs/epics_and_stories.md","144","8","To Do","Medium","P3","MB-702","L","8","moneybuddy","p3","journey","visualization",""
+"Story","[MB-703] Record a progress check-in","User story
+As a user, I can record a progress check-in.
+
+Acceptance criteria
+- Date, amount, note, and optional sentiment-free context save to history.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: M
+Parent epic: MB-E08 Milestone journey
+
+Source
+docs/epics_and_stories.md","145","8","To Do","Medium","P3","MB-703","M","5","moneybuddy","p3","journey","journal",""
+"Story","[MB-704] Review why a milestone date changed","User story
+As a user, I can review why a milestone date changed.
+
+Acceptance criteria
+- Two snapshots yield amount/date delta and input-based explanation.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: L
+Parent epic: MB-E08 Milestone journey
+
+Source
+docs/epics_and_stories.md","146","8","To Do","Medium","P3","MB-704","L","8","moneybuddy","p3","journey","explainability",""
+"Story","[MB-705] Distinguish my notes from system summaries","User story
+As a user, I can distinguish my notes from system summaries.
+
+Acceptance criteria
+- Authorship and generated status are visibly and accessibly labeled.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: S
+Parent epic: MB-E08 Milestone journey
+
+Source
+docs/epics_and_stories.md","147","8","To Do","Medium","P3","MB-705","S","2","moneybuddy","p3","journey","content",""
+"Story","[MB-801] I understand bank connection before consenting","User story
+As a user, I understand bank connection before consenting.
+
+Acceptance criteria
+- Provider, purpose, data scope, read-only access, retention, and revoke path shown.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","148","9","To Do","Low","P4","MB-801","M","5","moneybuddy","p4","plaid","consent",""
+"Story","[MB-802] Connect an institution through Plaid Link","User story
+As a user, I can connect an institution through Plaid Link.
+
+Acceptance criteria
+- Link token is server-created.
+- public token is exchanged server-side.
+- errors recover.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","149","9","To Do","Low","P4","MB-802","L","8","moneybuddy","p4","plaid","api",""
+"Story","[MB-803] Choose accounts for analysis","User story
+As a user, I can choose accounts for analysis.
+
+Acceptance criteria
+- Unsupported accounts are explained.
+- selection can be changed.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","150","9","To Do","Low","P4","MB-803","M","5","moneybuddy","p4","plaid","accounts",""
+"Story","[MB-804] I process Plaid webhooks securely","User story
+As a system, I process Plaid webhooks securely.
+
+Acceptance criteria
+- Verification, quick acknowledgment, queueing, replay tests, and redacted logs pass.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","151","9","To Do","Low","P4","MB-804","L","8","moneybuddy","p4","plaid","security","backend"
+"Story","[MB-805] I sync transactions incrementally","User story
+As a system, I sync transactions incrementally.
+
+Acceptance criteria
+- Added/modified/removed and cursor commit atomically.
+- retry is idempotent.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","152","9","To Do","Low","P4","MB-805","L","8","moneybuddy","p4","plaid","sync",""
+"Story","[MB-806] See sync freshness and recover connection errors","User story
+As a user, I can see sync freshness and recover connection errors.
+
+Acceptance criteria
+- Last sync, delayed/reconnect/partial states, retry, and support path exist.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","153","9","To Do","Low","P4","MB-806","M","5","moneybuddy","p4","plaid","reliability",""
+"Story","[MB-807] Disconnect an institution and delete imported data","User story
+As a user, I can disconnect an institution and delete imported data.
+
+Acceptance criteria
+- Scope and consequences shown.
+- provider revocation and deletion are verified.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E09 Bank connectivity
+
+Source
+docs/epics_and_stories.md","154","9","To Do","Low","P4","MB-807","L","8","moneybuddy","p4","plaid","privacy",""
+"Story","[MB-901] Review imported transactions","User story
+As a user, I can review imported transactions.
+
+Acceptance criteria
+- Pending/posted, account, merchant, date, amount, and category display correctly.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E10 Reconciliation
+
+Source
+docs/epics_and_stories.md","155","10","To Do","Low","P4","MB-901","M","5","moneybuddy","p4","transactions","mobile",""
+"Story","[MB-902] Correct a transaction category","User story
+As a user, I can correct a transaction category.
+
+Acceptance criteria
+- Correction persists and optionally creates a transparent future rule.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E10 Reconciliation
+
+Source
+docs/epics_and_stories.md","156","10","To Do","Low","P4","MB-902","M","5","moneybuddy","p4","transactions","categorization",""
+"Story","[MB-903] Compare planned and actual cashflow","User story
+As a user, I can compare planned and actual cashflow.
+
+Acceptance criteria
+- Matching confidence and unmatched items are visible.
+- plan remains unchanged.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E10 Reconciliation
+
+Source
+docs/epics_and_stories.md","157","10","To Do","Low","P4","MB-903","L","8","moneybuddy","p4","reconciliation","forecast",""
+"Story","[MB-904] Understand a goal-date impact","User story
+As a user, I can understand a goal-date impact.
+
+Acceptance criteria
+- Explanation cites relevant actuals and snapshot delta without judgmental copy.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E10 Reconciliation
+
+Source
+docs/epics_and_stories.md","158","10","To Do","Low","P4","MB-904","L","8","moneybuddy","p4","reconciliation","explainability",""
+"Story","[MB-905] Exclude an irrelevant transaction from analysis","User story
+As a user, I can exclude an irrelevant transaction from analysis.
+
+Acceptance criteria
+- Exclusion is reversible, audited, and reflected in the next projection.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: M
+Parent epic: MB-E10 Reconciliation
+
+Source
+docs/epics_and_stories.md","159","10","To Do","Low","P4","MB-905","M","5","moneybuddy","p4","transactions","user-control",""
+"Story","[MB-1001] Critical flows meet accessibility requirements","User story
+As a user, critical flows meet accessibility requirements.
+
+Acceptance criteria
+- Screen reader, text scale, contrast, reduced motion, and agenda/table alternatives pass.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P0–P5
+Tshirt size: L
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","160","11","To Do","High","P0–P5","MB-1001","L","8","moneybuddy","p0-p5","accessibility","quality",""
+"Story","[MB-1002] Crashes and server failures are observable without leaking data","User story
+As an operator, crashes and server failures are observable without leaking data.
+
+Acceptance criteria
+- Sentry/logging redaction tests, alerts, ownership, and runbook exist.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P3
+Tshirt size: M
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","161","11","To Do","Medium","P3","MB-1002","M","5","moneybuddy","p3","observability","privacy",""
+"Story","[MB-1003] Verify the threat model","User story
+As a security reviewer, I can verify the threat model.
+
+Acceptance criteria
+- Auth, storage, Plaid, logging, analytics, deletion, and support threats are reviewed.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P4
+Tshirt size: L
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","162","11","To Do","Low","P4","MB-1003","L","8","moneybuddy","p4","security","privacy",""
+"Story","[MB-1004] Build and roll back mobile releases","User story
+As a release manager, I can build and roll back mobile releases.
+
+Acceptance criteria
+- Reproducible EAS profiles, signing ownership, staged rollout, and rollback test exist.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: L
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","163","11","To Do","Lowest","P5","MB-1004","L","8","moneybuddy","p5","release","devops",""
+"Story","[MB-1005] Diagnose issues safely","User story
+As a support owner, I can diagnose issues safely.
+
+Acceptance criteria
+- Support tooling and logs use IDs/redaction.
+- no credential or full financial dump required.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: M
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","164","11","To Do","Lowest","P5","MB-1005","M","5","moneybuddy","p5","support","security",""
+"Story","[MB-1006] I understand data practices before launch","User story
+As a user, I understand data practices before launch.
+
+Acceptance criteria
+- Store disclosures, in-app privacy controls, and retention language agree.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: M
+Parent epic: MB-E11 Quality and release
+
+Source
+docs/epics_and_stories.md","165","11","To Do","Lowest","P5","MB-1006","M","5","moneybuddy","p5","privacy","release",""
+"Story","[MB-1101] Domain logic is reusable outside React Native","User story
+As a developer, domain logic is reusable outside React Native.
+
+Acceptance criteria
+- Proven domain code moves to a package without platform imports.
+- fixtures still pass.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: L
+Parent epic: MB-E12 Web readiness
+
+Source
+docs/epics_and_stories.md","166","12","To Do","Lowest","P5","MB-1101","L","8","moneybuddy","p5","web","architecture",""
+"Story","[MB-1102] Mobile and web share API contracts","User story
+As a developer, mobile and web share API contracts.
+
+Acceptance criteria
+- Generated or shared schemas compile and contract tests pass in both clients.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: M
+Parent epic: MB-E12 Web readiness
+
+Source
+docs/epics_and_stories.md","167","12","To Do","Lowest","P5","MB-1102","M","5","moneybuddy","p5","web","api",""
+"Story","[MB-1103] Navigate a responsive shell","User story
+As a web user, I can navigate a responsive shell.
+
+Acceptance criteria
+- Navigation rail/panels preserve mobile IA and meet keyboard/focus requirements.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: L
+Parent epic: MB-E12 Web readiness
+
+Source
+docs/epics_and_stories.md","168","12","To Do","Lowest","P5","MB-1103","L","8","moneybuddy","p5","web","accessibility",""
+"Story","[MB-1104] Charts communicate the same results on web and mobile","User story
+As a user, charts communicate the same results on web and mobile.
+
+Acceptance criteria
+- Platform adapters consume identical model and pass visual/data fixtures.
+
+Shared completion criteria
+- Tests are proportional to implementation risk.
+- Accessibility and relevant loading, empty, error, offline, stale, and partial states are reviewed.
+- Only synthetic financial data is used in fixtures, screenshots, and logs.
+- Documentation and API contracts are updated and relevant CI checks pass.
+
+Planning metadata
+Phase: P5
+Tshirt size: L
+Parent epic: MB-E12 Web readiness
+
+Source
+docs/epics_and_stories.md","169","12","To Do","Lowest","P5","MB-1104","L","8","moneybuddy","p5","web","visualization",""
