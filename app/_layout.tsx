@@ -20,7 +20,8 @@ export default function RootLayout() {
           headerStyle: { backgroundColor: tokens.color.canvas },
           headerTintColor: tokens.color.ink,
           headerTitleStyle: { fontWeight: '700' },
-        }}>
+        }}
+      >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="about" options={{ title: 'How MoneyBuddy works' }} />
         <Stack.Screen name="state-preview" options={{ title: 'App state preview' }} />

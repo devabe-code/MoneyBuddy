@@ -202,26 +202,26 @@ engagement notifications.
 
 ## Release phases
 
-| Release | User promise |
-| --- | --- |
-| P0 | A trustworthy shell demonstrates the future experience with sample data. |
-| P1 | I can manually model where my money goes over the next year. |
-| P2 | I can compare routes to a savings goal and choose one. |
-| P3 | My plan and milestone history persist securely across devices. |
-| P4 | I can see how actual bank activity changed my plan. |
-| P5 | The mobile product is release-ready and its core can support web. |
+| Release | User promise                                                             |
+| ------- | ------------------------------------------------------------------------ |
+| P0      | A trustworthy shell demonstrates the future experience with sample data. |
+| P1      | I can manually model where my money goes over the next year.             |
+| P2      | I can compare routes to a savings goal and choose one.                   |
+| P3      | My plan and milestone history persist securely across devices.           |
+| P4      | I can see how actual bank activity changed my plan.                      |
+| P5      | The mobile product is release-ready and its core can support web.        |
 
 ## Key risks and mitigations
 
-| Risk | Mitigation |
-| --- | --- |
+| Risk                                      | Mitigation                                             |
+| ----------------------------------------- | ------------------------------------------------------ |
 | Tax estimate interpreted as authoritative | Prominent assumptions, narrow support, manual override |
-| False precision in forecasts | Ranges/warnings, rule versions, explainable events |
-| Shame-inducing spending language | Neutral copy guidelines and research review |
-| Bank connection trust barrier | Delay until value is proven manually; clear consent |
-| Goal overload | One active focus with visible priority tradeoffs |
-| Stale data presented as live | Sync timestamp and stale/error states |
-| Scope expansion into advice | Product/legal review and explicit non-goals |
+| False precision in forecasts              | Ranges/warnings, rule versions, explainable events     |
+| Shame-inducing spending language          | Neutral copy guidelines and research review            |
+| Bank connection trust barrier             | Delay until value is proven manually; clear consent    |
+| Goal overload                             | One active focus with visible priority tradeoffs       |
+| Stale data presented as live              | Sync timestamp and stale/error states                  |
+| Scope expansion into advice               | Product/legal review and explicit non-goals            |
 
 ## Research questions
 

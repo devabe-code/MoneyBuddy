@@ -58,12 +58,12 @@ flowchart TB
 
 Use four persistent tabs once P3 is reached:
 
-| Tab | Purpose | Default content |
-| --- | --- | --- |
-| Today | Decision-oriented summary | available-to-save, next events, focus goal |
-| Calendar | Dated cashflow understanding | current month plus running balance |
-| Goals | Scenario planning | active goals ordered by priority |
-| Journey | Motivation and history | roadmap plus recent journal entries |
+| Tab      | Purpose                      | Default content                            |
+| -------- | ---------------------------- | ------------------------------------------ |
+| Today    | Decision-oriented summary    | available-to-save, next events, focus goal |
+| Calendar | Dated cashflow understanding | current month plus running balance         |
+| Goals    | Scenario planning            | active goals ordered by priority           |
+| Journey  | Motivation and history       | roadmap plus recent journal entries        |
 
 Profile and settings open from the Today header. In P0–P2, Journey may remain a
 disabled preview or be omitted until it provides real value.
@@ -207,14 +207,14 @@ semantic tokens so dark mode, high contrast, and brand evolution remain safe.
 
 ### Required labels
 
-| Data class | Label examples |
-| --- | --- |
-| Planned | “Planned expense”, “Scheduled transfer” |
-| Estimated | “Estimated net pay”, “Projected balance” |
-| Actual | “Posted transaction”, “Actual spending” |
-| Scenario | “Draft strategy”, “Not applied” |
-| Stale | “Last synced 2 days ago” |
-| Incomplete | “More information needed” |
+| Data class | Label examples                           |
+| ---------- | ---------------------------------------- |
+| Planned    | “Planned expense”, “Scheduled transfer”  |
+| Estimated  | “Estimated net pay”, “Projected balance” |
+| Actual     | “Posted transaction”, “Actual spending”  |
+| Scenario   | “Draft strategy”, “Not applied”          |
+| Stale      | “Last synced 2 days ago”                 |
+| Incomplete | “More information needed”                |
 
 ### Voice
 
@@ -263,16 +263,16 @@ terminology, calculation outputs, status semantics, and task sequence.
 
 Every primary screen must define:
 
-| State | Required behavior |
-| --- | --- |
-| First use | Explain value and offer one primary action |
-| Loading | Preserve layout and avoid fake financial values |
-| Partial | Render usable sections and identify missing inputs |
-| Empty | Explain why empty and how to add data |
-| Offline | Show cached data, freshness, and unavailable actions |
-| Stale | Show last updated and retry/reconnect path |
-| Error | Plain-language cause, recovery, and retained draft |
-| Success | Confirm result without blocking continued work |
+| State     | Required behavior                                    |
+| --------- | ---------------------------------------------------- |
+| First use | Explain value and offer one primary action           |
+| Loading   | Preserve layout and avoid fake financial values      |
+| Partial   | Render usable sections and identify missing inputs   |
+| Empty     | Explain why empty and how to add data                |
+| Offline   | Show cached data, freshness, and unavailable actions |
+| Stale     | Show last updated and retry/reconnect path           |
+| Error     | Plain-language cause, recovery, and retained draft   |
+| Success   | Confirm result without blocking continued work       |
 
 The P0 `CommonState` component is the shared implementation for loading, partial,
 empty, offline, stale, and error rows above. Its panel form is the default; its
@@ -292,11 +292,11 @@ contrast, and assistive-technology semantics.
 
 ## Design deliverables by phase
 
-| Phase | Required design artifacts |
-| --- | --- |
-| P0 | tokens, navigation, common states, sample-data prototype |
-| P1 | onboarding, calendar, day/paycheck detail, tax assumptions |
-| P2 | goal CRUD, scenario comparison, table/chart accessibility |
-| P3 | journey map, journal, auth, offline/conflict states |
-| P4 | consent, sync/reconnect, categorization, impact explanations |
-| P5 | accessibility audit, store assets, responsive web patterns |
+| Phase | Required design artifacts                                    |
+| ----- | ------------------------------------------------------------ |
+| P0    | tokens, navigation, common states, sample-data prototype     |
+| P1    | onboarding, calendar, day/paycheck detail, tax assumptions   |
+| P2    | goal CRUD, scenario comparison, table/chart accessibility    |
+| P3    | journey map, journal, auth, offline/conflict states          |
+| P4    | consent, sync/reconnect, categorization, impact explanations |
+| P5    | accessibility audit, store assets, responsive web patterns   |

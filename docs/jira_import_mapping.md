@@ -4,35 +4,35 @@ Use this guide with [`moneybuddy_jira_import.csv`](./moneybuddy_jira_import.csv)
 
 ## Space setup
 
-| Jira option | Value |
-| --- | --- |
-| Use settings from existing project | DevCodeAbe |
-| Jira space | Software space |
-| Template | Kanban |
-| Space name | DevCodeAbe |
-| Management | Team-managed |
-| Access | Open |
-| Key | SCRUM |
+| Jira option                        | Value          |
+| ---------------------------------- | -------------- |
+| Use settings from existing project | DevCodeAbe     |
+| Jira space                         | Software space |
+| Template                           | Kanban         |
+| Space name                         | DevCodeAbe     |
+| Management                         | Team-managed   |
+| Access                             | Open           |
+| Key                                | SCRUM          |
 
 These choices belong to the Jira space setup screen and should not be mapped from
 CSV columns.
 
 ## CSV field mapping
 
-| CSV header | Jira destination | Notes |
-| --- | --- | --- |
-| Work Type | Work type | Map `Epic` and `Story` to matching Jira work types. |
-| Summary | Summary | Required by Jira. Stable MoneyBuddy ID is included in brackets. |
-| Description | Description | Contains user story, acceptance criteria, completion criteria, and source. |
-| Work Item ID | Work item ID | Import-only numeric identifier used to construct hierarchy. |
-| Parent | Parent | References the epic's numeric Work Item ID. |
-| Status | Status | Map `To Do` to the space's initial Kanban status. |
-| Priority | Priority | Uses Jira defaults: Highest, High, Medium, Low, Lowest. |
-| Phase | Phase | Create a short-text or single-select custom field with P0–P5 values. |
-| External ID | External ID | Create a short-text custom field for stable IDs such as `MB-001`. |
-| Tshirt Size | Tshirt Size | Create a single-select custom field with S, M, and L. |
-| Story Points | Story point estimate | If estimation is disabled, enable it or leave this column unmapped. |
-| Labels | Labels | Map all five repeated Labels columns to the same Jira Labels field. |
+| CSV header   | Jira destination     | Notes                                                                      |
+| ------------ | -------------------- | -------------------------------------------------------------------------- |
+| Work Type    | Work type            | Map `Epic` and `Story` to matching Jira work types.                        |
+| Summary      | Summary              | Required by Jira. Stable MoneyBuddy ID is included in brackets.            |
+| Description  | Description          | Contains user story, acceptance criteria, completion criteria, and source. |
+| Work Item ID | Work item ID         | Import-only numeric identifier used to construct hierarchy.                |
+| Parent       | Parent               | References the epic's numeric Work Item ID.                                |
+| Status       | Status               | Map `To Do` to the space's initial Kanban status.                          |
+| Priority     | Priority             | Uses Jira defaults: Highest, High, Medium, Low, Lowest.                    |
+| Phase        | Phase                | Create a short-text or single-select custom field with P0–P5 values.       |
+| External ID  | External ID          | Create a short-text custom field for stable IDs such as `MB-001`.          |
+| Tshirt Size  | Tshirt Size          | Create a single-select custom field with S, M, and L.                      |
+| Story Points | Story point estimate | If estimation is disabled, enable it or leave this column unmapped.        |
+| Labels       | Labels               | Map all five repeated Labels columns to the same Jira Labels field.        |
 
 ## Import expectations
 

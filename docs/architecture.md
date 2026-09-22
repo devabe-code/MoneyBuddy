@@ -239,12 +239,12 @@ out-of-order delivery.
 
 ## Environments and delivery
 
-| Environment | Purpose | Data policy |
-| --- | --- | --- |
-| Local | Feature development | Synthetic fixtures only |
-| Development | Shared integration | Seeded non-production data |
-| Staging | Release candidate | Synthetic or explicitly consented test data |
-| Production | Customer use | Least privilege and documented retention |
+| Environment | Purpose             | Data policy                                 |
+| ----------- | ------------------- | ------------------------------------------- |
+| Local       | Feature development | Synthetic fixtures only                     |
+| Development | Shared integration  | Seeded non-production data                  |
+| Staging     | Release candidate   | Synthetic or explicitly consented test data |
+| Production  | Customer use        | Least privilege and documented retention    |
 
 GitHub Actions should run lint, formatting, type checks, unit tests, API contract
 tests, and migration validation. EAS Build produces internal previews and signed
@@ -253,14 +253,14 @@ rollback path.
 
 ## Architecture decisions still open
 
-| Decision | Target phase | Decision driver |
-| --- | --- | --- |
-| Supabase Auth vs Clerk | P0 | mobile session UX, backend verification, cost |
-| Managed PostgreSQL provider | P0 | backups, region, connection pooling, cost |
-| Prisma vs Drizzle | P0 | migrations, type safety, server framework fit |
-| Chart implementation | P1 spike | accessibility, performance, future web reuse |
-| Tax-rule data source | P1 | licensing, update cadence, jurisdiction coverage |
-| Queue provider | P4 | webhook volume, retries, operational simplicity |
+| Decision                    | Target phase | Decision driver                                  |
+| --------------------------- | ------------ | ------------------------------------------------ |
+| Supabase Auth vs Clerk      | P0           | mobile session UX, backend verification, cost    |
+| Managed PostgreSQL provider | P0           | backups, region, connection pooling, cost        |
+| Prisma vs Drizzle           | P0           | migrations, type safety, server framework fit    |
+| Chart implementation        | P1 spike     | accessibility, performance, future web reuse     |
+| Tax-rule data source        | P1           | licensing, update cadence, jurisdiction coverage |
+| Queue provider              | P4           | webhook volume, retries, operational simplicity  |
 
 Record each choice as a short architecture decision record before implementation.
 

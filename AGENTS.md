@@ -45,7 +45,10 @@ Read the exact versioned docs at https://docs.expo.dev/versions/v54.0.0/ before 
 - Use only synthetic financial information in tests, fixtures, snapshots, logs,
   and screenshots.
 - `npm run check` is the minimum completion gate. Changes are not complete until
-  lint, strict TypeScript, and the full Jest suite pass. Run Expo Doctor and a
+  formatting, lint, strict TypeScript, and the full Jest suite pass.
+- The required `verify` GitHub Actions job must pass before merge. Do not weaken,
+  rename, skip, or mark required quality steps as allowed failures without an
+  explicit architecture decision and corresponding ruleset update.
   production export when dependencies, configuration, routing, or bundling change.
 - The test-pairing contract in `src/test/test-pairing.test.ts` is intentional. Add
   narrow exemptions only for declarative barrel/type files and explain them in the

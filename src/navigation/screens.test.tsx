@@ -20,6 +20,7 @@ describe('route composition', () => {
   ])('renders the %s route from reusable pieces', async (_name, Route, heading) => {
     await render(<Route />);
     expect(screen.getByRole('header', { name: heading })).toBeOnTheScreen();
-    if (_name === 'Goals') await waitFor(() => expect(screen.queryByText('Loading goals')).not.toBeOnTheScreen());
+    if (_name === 'Goals')
+      await waitFor(() => expect(screen.queryByText('Loading goals')).not.toBeOnTheScreen());
   });
 });

@@ -96,14 +96,14 @@ API schemas into `packages/contracts`; do not create packages merely for symmetr
 
 ## Delivery summary
 
-| Phase | Outcome | User-visible proof |
-| --- | --- | --- |
-| P0 | Trusted foundation | Onboarding shell, local sample plan, quality gates |
-| P1 | Manual cashflow | 12-month calendar and explainable net-pay estimate |
-| P2 | Savings planning | Goal CRUD, strategy comparison, savings table |
-| P3 | Milestone journey | Journal, progress history, multi-goal roadmap |
-| P4 | Connected reality | Read-only bank sync and projected-vs-actual insights |
-| P5 | Release and web readiness | Hardened mobile release and reusable web foundation |
+| Phase | Outcome                   | User-visible proof                                   |
+| ----- | ------------------------- | ---------------------------------------------------- |
+| P0    | Trusted foundation        | Onboarding shell, local sample plan, quality gates   |
+| P1    | Manual cashflow           | 12-month calendar and explainable net-pay estimate   |
+| P2    | Savings planning          | Goal CRUD, strategy comparison, savings table        |
+| P3    | Milestone journey         | Journal, progress history, multi-goal roadmap        |
+| P4    | Connected reality         | Read-only bank sync and projected-vs-actual insights |
+| P5    | Release and web readiness | Hardened mobile release and reusable web foundation  |
 
 ## Success guardrails
 

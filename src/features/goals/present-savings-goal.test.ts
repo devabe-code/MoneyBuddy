@@ -14,13 +14,23 @@ describe('savings-goal presenter', () => {
 
   it('maps domain output to the reusable goal-card contract', () => {
     const goal = SYNTHETIC_SAVINGS_GOALS[0];
-    expect(presentSavingsGoal({ goal, progress: defaultSavingsGoalProgressPolicy.summarize(goal) })).toMatchObject({
-      date: 'March 2027', icon: 'shield-checkmark-outline', progress: 62, remaining: '$4,560', saved: '$7,440', target: '$12,000 target', tone: 'warning',
+    expect(
+      presentSavingsGoal({ goal, progress: defaultSavingsGoalProgressPolicy.summarize(goal) }),
+    ).toMatchObject({
+      date: 'March 2027',
+      icon: 'shield-checkmark-outline',
+      progress: 62,
+      remaining: '$4,560',
+      saved: '$7,440',
+      target: '$12,000 target',
+      tone: 'warning',
     });
   });
 
   it('formats freshness deterministically without using the device time zone', () => {
-    expect(formatFreshnessLabel('2026-09-18T12:00:00.000Z')).toBe('Last updated Sep 18, 2026, 12:00 PM UTC');
+    expect(formatFreshnessLabel('2026-09-18T12:00:00.000Z')).toBe(
+      'Last updated Sep 18, 2026, 12:00 PM UTC',
+    );
     expect(formatFreshnessLabel('not-an-instant')).toBe('Last updated time unavailable');
   });
 });

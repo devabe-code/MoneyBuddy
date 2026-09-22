@@ -10,7 +10,10 @@ describe('action components', () => {
 
   it('renders accessible text links', async () => {
     await render(<TextLink hint="Opens details" href="/about" label="Learn more" />);
-    expect(screen.getByRole('link', { name: 'Learn more' })).toHaveProp('accessibilityHint', 'Opens details');
+    expect(screen.getByRole('link', { name: 'Learn more' })).toHaveProp(
+      'accessibilityHint',
+      'Opens details',
+    );
   });
 
   it('exposes disabled state', async () => {

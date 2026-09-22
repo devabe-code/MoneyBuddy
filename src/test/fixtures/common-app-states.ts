@@ -1,9 +1,10 @@
 import type { CommonStateExample } from '@/src/features/common-states/common-state-preview-screen';
 
-export type CommonAppStateFixture = CommonStateExample & Readonly<{
-  fixtureKind: 'synthetic';
-  id: `synthetic-${string}`;
-}>;
+export type CommonAppStateFixture = CommonStateExample &
+  Readonly<{
+    fixtureKind: 'synthetic';
+    id: `synthetic-${string}`;
+  }>;
 
 export const SYNTHETIC_COMMON_APP_STATES: readonly CommonAppStateFixture[] = Object.freeze([
   {

@@ -20,10 +20,14 @@ describe('CommonState', () => {
   });
 
   it('announces errors assertively and other changes politely', async () => {
-    const view = await render(<CommonState kind="error" message="Try again." title="Unable to load" />);
+    const view = await render(
+      <CommonState kind="error" message="Try again." title="Unable to load" />,
+    );
     expect(screen.getByRole('alert')).toHaveProp('accessibilityLiveRegion', 'assertive');
 
-    await view.rerender(<CommonState kind="offline" message="Cached content remains available." title="Offline" />);
+    await view.rerender(
+      <CommonState kind="offline" message="Cached content remains available." title="Offline" />,
+    );
     expect(screen.getByRole('summary')).toHaveProp('accessibilityLiveRegion', 'polite');
   });
 
@@ -31,7 +35,11 @@ describe('CommonState', () => {
     const onPress = jest.fn();
     await render(
       <CommonState
-        action={{ accessibilityHint: 'Attempts the synthetic request again.', label: 'Try again', onPress }}
+        action={{
+          accessibilityHint: 'Attempts the synthetic request again.',
+          label: 'Try again',
+          onPress,
+        }}
         kind="error"
         message="The request did not complete."
         title="Unable to load"

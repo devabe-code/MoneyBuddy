@@ -15,13 +15,19 @@ export function ProgressBar({ label, value }: { label: string; value: number }) 
       accessibilityLabel={label}
       accessibilityRole="progressbar"
       accessibilityValue={{ max: 100, min: 0, now: boundedValue }}
-      style={styles.progressTrack}>
+      style={styles.progressTrack}
+    >
       <View style={[styles.progressFill, { width: `${boundedValue}%` }]} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  progressTrack: { backgroundColor: tokens.color.border, borderRadius: 5, height: 9, overflow: 'hidden' },
+  progressTrack: {
+    backgroundColor: tokens.color.border,
+    borderRadius: 5,
+    height: 9,
+    overflow: 'hidden',
+  },
   progressFill: { backgroundColor: tokens.color.primary, borderRadius: 5, height: '100%' },
 });

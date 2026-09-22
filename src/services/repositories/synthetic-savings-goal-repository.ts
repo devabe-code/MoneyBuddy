@@ -1,5 +1,8 @@
 import type { SavingsGoal } from '@/src/domain/goals/savings-goal';
-import type { RepositoryFreshness, SavingsGoalRepository } from '@/src/domain/goals/savings-goal-repository';
+import type {
+  RepositoryFreshness,
+  SavingsGoalRepository,
+} from '@/src/domain/goals/savings-goal-repository';
 
 type SyntheticRepositoryScenario =
   | Readonly<{ cachedAt?: string; includeCache?: boolean; kind: 'offline'; message?: string }>
@@ -16,7 +19,10 @@ export class SyntheticSavingsGoalRepository implements SavingsGoalRepository {
   async list() {
     if (typeof this.scenario !== 'string') {
       if (this.scenario.kind === 'error') {
-        return { kind: 'error' as const, message: this.scenario.message ?? 'Synthetic goals are unavailable.' };
+        return {
+          kind: 'error' as const,
+          message: this.scenario.message ?? 'Synthetic goals are unavailable.',
+        };
       }
       return {
         cachedAt: this.scenario.cachedAt ?? SYNTHETIC_UPDATED_AT,

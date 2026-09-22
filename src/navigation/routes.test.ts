@@ -5,7 +5,12 @@ import { coreRoutes, MONEYBUDDY_SCHEME, resolveCoreRoute, supportRoutes } from '
 
 describe('core navigation contract', () => {
   it('has the four required destinations with unique routes and route files', () => {
-    expect(coreRoutes.map((route) => route.title)).toEqual(['Today', 'Calendar', 'Goals', 'Journey']);
+    expect(coreRoutes.map((route) => route.title)).toEqual([
+      'Today',
+      'Calendar',
+      'Goals',
+      'Journey',
+    ]);
     expect(new Set(coreRoutes.map((route) => route.href)).size).toBe(coreRoutes.length);
     for (const route of coreRoutes) {
       expect(existsSync(path.join(process.cwd(), 'app', '(tabs)', `${route.file}.tsx`))).toBe(true);

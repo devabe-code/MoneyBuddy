@@ -2,7 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { CommonState, DisabledAction, Screen } from '@/src/design-system/components';
 import { GoalProgressCard } from './goal-progress-card';
-import type { LoadSavingsGoalOverview, SavingsGoalOverviewState } from './load-savings-goal-overview';
+import type {
+  LoadSavingsGoalOverview,
+  SavingsGoalOverviewState,
+} from './load-savings-goal-overview';
 import { formatFreshnessLabel, presentSavingsGoal } from './present-savings-goal';
 
 const initialState: SavingsGoalOverviewState = Object.freeze({ kind: 'loading' });
@@ -19,13 +22,16 @@ export function SavingsGoalsScreen({ loadOverview }: { loadOverview: LoadSavings
       const nextState = await loadOverview();
       if (request === requestSequence.current) setState(nextState);
     } catch {
-      if (request === requestSequence.current) setState({ kind: 'error', message: SAFE_LOAD_ERROR });
+      if (request === requestSequence.current)
+        setState({ kind: 'error', message: SAFE_LOAD_ERROR });
     }
   }, [loadOverview]);
 
   useEffect(() => {
     void reload();
-    return () => { requestSequence.current += 1; };
+    return () => {
+      requestSequence.current += 1;
+    };
   }, [reload]);
 
   const items = 'items' in state ? state.items : [];
@@ -33,17 +39,27 @@ export function SavingsGoalsScreen({ loadOverview }: { loadOverview: LoadSavings
   return (
     <Screen eyebrow="SAVINGS PLAN" title="Goals" subtitle="Turn a target into a plan you can see.">
       <GoalsCommonState reload={reload} state={state} />
-      {items.map((item) => <GoalProgressCard goal={presentSavingsGoal(item)} key={item.goal.id} />)}
+      {items.map((item) => (
+        <GoalProgressCard goal={presentSavingsGoal(item)} key={item.goal.id} />
+      ))}
       {items.length > 0 ? <DisabledAction label="Add a goal · coming soon" /> : null}
     </Screen>
   );
 }
 
-function GoalsCommonState({ reload, state }: { reload: () => Promise<void>; state: SavingsGoalOverviewState }) {
+function GoalsCommonState({
+  reload,
+  state,
+}: {
+  reload: () => Promise<void>;
+  state: SavingsGoalOverviewState;
+}) {
   const retryAction = {
     accessibilityHint: 'Requests the synthetic savings-goal outlook again.',
     label: 'Try again',
-    onPress: () => { void reload(); },
+    onPress: () => {
+      void reload();
+    },
   } as const;
   const refreshAction = { ...retryAction, label: 'Refresh' } as const;
 
@@ -51,11 +67,31 @@ function GoalsCommonState({ reload, state }: { reload: () => Promise<void>; stat
     case 'ready':
       return null;
     case 'loading':
-      return <CommonState kind="loading" message="Preparing your savings outlook." title="Loading goals" />;
+      return (
+        <CommonState
+          kind="loading"
+          message="Preparing your savings outlook."
+          title="Loading goals"
+        />
+      );
     case 'empty':
-      return <CommonState action={refreshAction} kind="empty" message="Create a goal when goal editing becomes available." title="No goals yet" />;
+      return (
+        <CommonState
+          action={refreshAction}
+          kind="empty"
+          message="Create a goal when goal editing becomes available."
+          title="No goals yet"
+        />
+      );
     case 'error':
-      return <CommonState action={retryAction} kind="error" message={state.message} title="Unable to load goals" />;
+      return (
+        <CommonState
+          action={retryAction}
+          kind="error"
+          message={state.message}
+          title="Unable to load goals"
+        />
+      );
     case 'offline':
       return (
         <CommonState

@@ -1,11 +1,20 @@
 import { Ionicons } from '@expo/vector-icons';
 import type { ComponentProps, PropsWithChildren } from 'react';
-import { StyleSheet, Text, View, type StyleProp, type TextProps, type TextStyle, type ViewStyle } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  type StyleProp,
+  type TextProps,
+  type TextStyle,
+  type ViewStyle,
+} from 'react-native';
 
 import { tokens } from './tokens';
 
 type IconName = ComponentProps<typeof Ionicons>['name'];
-type TextVariant = 'body' | 'caption' | 'eyebrow' | 'label' | 'screenTitle' | 'sectionTitle' | 'title';
+type TextVariant =
+  'body' | 'caption' | 'eyebrow' | 'label' | 'screenTitle' | 'sectionTitle' | 'title';
 type TextTone = 'default' | 'muted' | 'primary' | 'danger' | 'onPrimary';
 
 const toneStyles: Record<TextTone, TextStyle> = {
@@ -30,7 +39,11 @@ export function SurfaceCard({
   padded = true,
   tone = 'default',
   style,
-}: PropsWithChildren<{ padded?: boolean; style?: StyleProp<ViewStyle>; tone?: 'default' | 'accent' }>) {
+}: PropsWithChildren<{
+  padded?: boolean;
+  style?: StyleProp<ViewStyle>;
+  tone?: 'default' | 'accent';
+}>) {
   return (
     <View
       style={[
@@ -38,7 +51,8 @@ export function SurfaceCard({
         tone === 'accent' && styles.accentCard,
         padded && styles.paddedCard,
         style,
-      ]}>
+      ]}
+    >
       {children}
     </View>
   );
@@ -59,7 +73,11 @@ export function IconBadge({
     <View
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
-      style={[styles.iconBadge, { backgroundColor: tint, borderRadius: size / 2, height: size, width: size }]}>
+      style={[
+        styles.iconBadge,
+        { backgroundColor: tint, borderRadius: size / 2, height: size, width: size },
+      ]}
+    >
       <Ionicons color={color} name={icon} size={Math.round(size * 0.48)} />
     </View>
   );
@@ -73,7 +91,12 @@ const styles = StyleSheet.create({
   screenTitle: { fontSize: 32, fontWeight: '800', letterSpacing: -0.8 },
   sectionTitle: { fontSize: 18, fontWeight: '800' },
   title: { fontSize: 16, fontWeight: '700' },
-  card: { backgroundColor: tokens.color.surface, borderColor: tokens.color.border, borderRadius: tokens.radius.md, borderWidth: 1 },
+  card: {
+    backgroundColor: tokens.color.surface,
+    borderColor: tokens.color.border,
+    borderRadius: tokens.radius.md,
+    borderWidth: 1,
+  },
   accentCard: { backgroundColor: tokens.color.accentSurface },
   paddedCard: { padding: tokens.space.md },
   iconBadge: { alignItems: 'center', justifyContent: 'center' },

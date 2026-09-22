@@ -18,11 +18,11 @@ interface SavingsGoalRepository {
 
 ## Result variants
 
-| Result | Required fields | Feature behavior |
-| --- | --- | --- |
-| Success | `data`, `freshness`, `updatedAt` | Summarize goals; empty data becomes the empty state |
+| Result  | Required fields                                            | Feature behavior                                                  |
+| ------- | ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| Success | `data`, `freshness`, `updatedAt`                           | Summarize goals; empty data becomes the empty state               |
 | Offline | safe `message`, optional `cachedData`, optional `cachedAt` | Show offline notice, freshness, and cached summaries when present |
-| Error | safe `message` | Show an error without adapter details or sensitive values |
+| Error   | safe `message`                                             | Show an error without adapter details or sensitive values         |
 
 Success freshness is `fresh`, `stale`, or `partial`. It maps to ready, stale, and
 partial feature states respectively. Loading is a feature lifecycle state before

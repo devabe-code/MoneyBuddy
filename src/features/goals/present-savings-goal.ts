@@ -47,5 +47,9 @@ export function presentSavingsGoal({ goal, progress }: SavingsGoalOverviewItem):
 
 function formatTargetMonth(localDate: string) {
   const [year, month] = localDate.split('-').map(Number);
-  return new Intl.DateTimeFormat('en-US', { month: 'long', timeZone: 'UTC', year: 'numeric' }).format(new Date(Date.UTC(year, month - 1, 1)));
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    timeZone: 'UTC',
+    year: 'numeric',
+  }).format(new Date(Date.UTC(year, month - 1, 1)));
 }

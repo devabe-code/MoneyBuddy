@@ -14,29 +14,29 @@ All additional dependencies should be introduced only in the phase that needs th
 
 ## Intended technology stack
 
-| Area | Intended choice | Rationale / constraint |
-| --- | --- | --- |
-| Mobile | Expo SDK 54 + React Native + TypeScript | Current stable physical-device workflow |
-| Navigation | Expo Router | File-based native and web routing |
-| Forms | React Hook Form + Zod | Typed validation and accessible error handling |
-| Server state | TanStack Query | Caching, retries, invalidation, offline-aware reads |
-| Client state | Zustand | Small scenario/onboarding stores only |
-| Dates | date-fns with explicit IANA time zones | Testable calendar arithmetic |
-| Money | Integer minor units behind domain helpers | Avoid binary floating-point persistence |
-| Charts | Adapter selected after P1 spike | Must meet accessibility, performance, and web needs |
-| API | NestJS + TypeScript + REST/OpenAPI | Modular boundaries and generated contracts |
-| Validation | Zod or generated OpenAPI schemas at boundaries | Reject invalid financial inputs early |
-| Database | PostgreSQL | Transactions, constraints, JSON snapshots, maturity |
-| ORM | Prisma, pending P0 ADR | Migrations and typed queries; confirm in spike |
-| Authentication | Supabase Auth or Clerk, pending P0 ADR | Managed mobile auth and server-verifiable tokens |
-| Jobs | Managed queue selected in P4 | Required for reliable Plaid synchronization |
-| Bank data | Plaid Link + Transactions Sync | Read-only connection and incremental updates |
-| Local storage | SecureStore for secrets; SQLite/AsyncStorage only by policy | Separate sensitive and ordinary cached data |
-| Mobile builds | EAS Build / Submit | Preview and store distribution |
-| CI | GitHub Actions | Lint, formatting, types, tests, migrations, contracts |
-| Observability | Sentry first; server metrics/log platform as load requires | Errors, traces, and redacted diagnostics |
-| Unit/integration tests | Jest or Vitest; React Native Testing Library | Pure domain and component behavior |
-| End-to-end tests | Maestro initially; reassess Detox when native depth grows | Critical journeys with lower setup cost |
+| Area                   | Intended choice                                             | Rationale / constraint                                |
+| ---------------------- | ----------------------------------------------------------- | ----------------------------------------------------- |
+| Mobile                 | Expo SDK 54 + React Native + TypeScript                     | Current stable physical-device workflow               |
+| Navigation             | Expo Router                                                 | File-based native and web routing                     |
+| Forms                  | React Hook Form + Zod                                       | Typed validation and accessible error handling        |
+| Server state           | TanStack Query                                              | Caching, retries, invalidation, offline-aware reads   |
+| Client state           | Zustand                                                     | Small scenario/onboarding stores only                 |
+| Dates                  | date-fns with explicit IANA time zones                      | Testable calendar arithmetic                          |
+| Money                  | Integer minor units behind domain helpers                   | Avoid binary floating-point persistence               |
+| Charts                 | Adapter selected after P1 spike                             | Must meet accessibility, performance, and web needs   |
+| API                    | NestJS + TypeScript + REST/OpenAPI                          | Modular boundaries and generated contracts            |
+| Validation             | Zod or generated OpenAPI schemas at boundaries              | Reject invalid financial inputs early                 |
+| Database               | PostgreSQL                                                  | Transactions, constraints, JSON snapshots, maturity   |
+| ORM                    | Prisma, pending P0 ADR                                      | Migrations and typed queries; confirm in spike        |
+| Authentication         | Supabase Auth or Clerk, pending P0 ADR                      | Managed mobile auth and server-verifiable tokens      |
+| Jobs                   | Managed queue selected in P4                                | Required for reliable Plaid synchronization           |
+| Bank data              | Plaid Link + Transactions Sync                              | Read-only connection and incremental updates          |
+| Local storage          | SecureStore for secrets; SQLite/AsyncStorage only by policy | Separate sensitive and ordinary cached data           |
+| Mobile builds          | EAS Build / Submit                                          | Preview and store distribution                        |
+| CI                     | GitHub Actions                                              | Lint, formatting, types, tests, migrations, contracts |
+| Observability          | Sentry first; server metrics/log platform as load requires  | Errors, traces, and redacted diagnostics              |
+| Unit/integration tests | Jest or Vitest; React Native Testing Library                | Pure domain and component behavior                    |
+| End-to-end tests       | Maestro initially; reassess Detox when native depth grows   | Critical journeys with lower setup cost               |
 
 ## Cross-cutting engineering contracts
 
@@ -234,15 +234,15 @@ browser client.
 
 ## Test strategy
 
-| Layer | Primary coverage |
-| --- | --- |
-| Domain unit | money, recurrence, taxes, forecasts, reconciliation |
-| Property-based | rounding, recurrence invariants, event ordering |
-| Component | form validation, states, accessible labels, interactions |
-| API integration | auth scopes, transactions, migrations, idempotency |
-| Contract | OpenAPI compatibility and serialized money/date formats |
-| End-to-end | onboarding, calendar, strategy apply, sync, delete account |
-| Operational | webhook replay, backup restore, token rotation, rollback |
+| Layer           | Primary coverage                                           |
+| --------------- | ---------------------------------------------------------- |
+| Domain unit     | money, recurrence, taxes, forecasts, reconciliation        |
+| Property-based  | rounding, recurrence invariants, event ordering            |
+| Component       | form validation, states, accessible labels, interactions   |
+| API integration | auth scopes, transactions, migrations, idempotency         |
+| Contract        | OpenAPI compatibility and serialized money/date formats    |
+| End-to-end      | onboarding, calendar, strategy apply, sync, delete account |
+| Operational     | webhook replay, backup restore, token rotation, rollback   |
 
 Use only synthetic financial fixtures in tests, screenshots, demos, and logs.
 

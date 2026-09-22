@@ -13,13 +13,7 @@ placeholders.
 ## Component contract
 
 ```ts
-type CommonStateKind =
-  | 'loading'
-  | 'empty'
-  | 'error'
-  | 'offline'
-  | 'stale'
-  | 'partial';
+type CommonStateKind = 'loading' | 'empty' | 'error' | 'offline' | 'stale' | 'partial';
 
 type CommonStateProps = {
   action?: {
@@ -38,14 +32,14 @@ type CommonStateProps = {
 
 ## Required semantics
 
-| Kind | Accessibility behavior | Content requirement |
-| --- | --- | --- |
-| Loading | `progressbar`, busy, polite live region | Describe work; placeholders contain no fake financial values |
-| Empty | summary, polite live region | Explain absence and provide the next useful action when available |
-| Error | alert, assertive live region | Use safe copy and provide recovery without exposing adapter details |
-| Offline | summary, polite live region | Retain cached content and show freshness when known |
-| Stale | summary, polite live region | Show freshness and a refresh or reconnect path |
-| Partial | summary, polite live region | Keep usable content visible and identify what is unavailable |
+| Kind    | Accessibility behavior                  | Content requirement                                                 |
+| ------- | --------------------------------------- | ------------------------------------------------------------------- |
+| Loading | `progressbar`, busy, polite live region | Describe work; placeholders contain no fake financial values        |
+| Empty   | summary, polite live region             | Explain absence and provide the next useful action when available   |
+| Error   | alert, assertive live region            | Use safe copy and provide recovery without exposing adapter details |
+| Offline | summary, polite live region             | Retain cached content and show freshness when known                 |
+| Stale   | summary, polite live region             | Show freshness and a refresh or reconnect path                      |
+| Partial | summary, polite live region             | Keep usable content visible and identify what is unavailable        |
 
 Recovery actions are siblings of the announcement container so screen readers do
 not collapse them into a non-operable child. Buttons have a minimum 44-point

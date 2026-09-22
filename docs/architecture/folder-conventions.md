@@ -25,16 +25,16 @@ never imports React, React Native, Expo, feature UI, adapters, or fixtures.
 
 ## Folder ownership
 
-| Folder | Owns | Must not own |
-| --- | --- | --- |
-| `app/` | Expo Router entry points and dependency composition calls | Financial rules, formatting, repository implementations, feature state |
-| `src/bootstrap/` | Concrete dependency wiring for a runnable app | Business rules or reusable UI |
-| `src/domain/` | Entities, invariants, policies, repository ports, deterministic results | Frameworks, display strings, network/storage details |
-| `src/features/<feature>/` | Use cases, presenters, feature screens, accessible UI orchestration | Concrete persistence/network adapters |
-| `src/services/` | Implementations of domain repository/service interfaces | Screen state or domain policy decisions |
-| `src/design-system/` | Cross-feature tokens and accessible primitives | Feature or financial knowledge |
-| `src/test/fixtures/` | Versioned synthetic inputs shared by tests and P0 adapters | Real customer, bank, or personal data |
-| `src/test/` | Cross-layer architecture and structural checks | Production behavior |
+| Folder                    | Owns                                                                    | Must not own                                                           |
+| ------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `app/`                    | Expo Router entry points and dependency composition calls               | Financial rules, formatting, repository implementations, feature state |
+| `src/bootstrap/`          | Concrete dependency wiring for a runnable app                           | Business rules or reusable UI                                          |
+| `src/domain/`             | Entities, invariants, policies, repository ports, deterministic results | Frameworks, display strings, network/storage details                   |
+| `src/features/<feature>/` | Use cases, presenters, feature screens, accessible UI orchestration     | Concrete persistence/network adapters                                  |
+| `src/services/`           | Implementations of domain repository/service interfaces                 | Screen state or domain policy decisions                                |
+| `src/design-system/`      | Cross-feature tokens and accessible primitives                          | Feature or financial knowledge                                         |
+| `src/test/fixtures/`      | Versioned synthetic inputs shared by tests and P0 adapters              | Real customer, bank, or personal data                                  |
+| `src/test/`               | Cross-layer architecture and structural checks                          | Production behavior                                                    |
 
 ## Sample Goals flow
 

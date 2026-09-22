@@ -16,6 +16,11 @@ describe('CommonStatePreviewScreen', () => {
   it('demonstrates recovery actions without external side effects', async () => {
     await render(<CommonStatePreviewScreen examples={SYNTHETIC_COMMON_APP_STATES} />);
     fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
-    await waitFor(() => expect(screen.getByText('Synthetic action selected: Try again.')).toHaveProp('accessibilityLiveRegion', 'polite'));
+    await waitFor(() =>
+      expect(screen.getByText('Synthetic action selected: Try again.')).toHaveProp(
+        'accessibilityLiveRegion',
+        'polite',
+      ),
+    );
   });
 });

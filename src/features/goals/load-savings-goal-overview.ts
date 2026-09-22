@@ -1,15 +1,30 @@
 import type { SavingsGoal } from '@/src/domain/goals/savings-goal';
 import type { SavingsGoalRepository } from '@/src/domain/goals/savings-goal-repository';
-import type { SavingsGoalProgress, SavingsGoalProgressPolicy } from '@/src/domain/goals/savings-goal-progress';
+import type {
+  SavingsGoalProgress,
+  SavingsGoalProgressPolicy,
+} from '@/src/domain/goals/savings-goal-progress';
 
-export type SavingsGoalOverviewItem = Readonly<{ goal: SavingsGoal; progress: SavingsGoalProgress }>;
+export type SavingsGoalOverviewItem = Readonly<{
+  goal: SavingsGoal;
+  progress: SavingsGoalProgress;
+}>;
 
 export type SavingsGoalOverviewState =
   | Readonly<{ kind: 'loading' }>
   | Readonly<{ kind: 'empty' }>
   | Readonly<{ kind: 'error'; message: string }>
-  | Readonly<{ items: readonly SavingsGoalOverviewItem[]; kind: 'offline'; message: string; updatedAt?: string }>
-  | Readonly<{ items: readonly SavingsGoalOverviewItem[]; kind: 'partial' | 'ready' | 'stale'; updatedAt: string }>;
+  | Readonly<{
+      items: readonly SavingsGoalOverviewItem[];
+      kind: 'offline';
+      message: string;
+      updatedAt?: string;
+    }>
+  | Readonly<{
+      items: readonly SavingsGoalOverviewItem[];
+      kind: 'partial' | 'ready' | 'stale';
+      updatedAt: string;
+    }>;
 
 export type LoadSavingsGoalOverview = () => Promise<SavingsGoalOverviewState>;
 
@@ -20,7 +35,8 @@ export function createLoadSavingsGoalOverview({
   progressPolicy: SavingsGoalProgressPolicy;
   repository: SavingsGoalRepository;
 }): LoadSavingsGoalOverview {
-  const summarize = (goals: readonly SavingsGoal[]) => goals.map((goal) => ({ goal, progress: progressPolicy.summarize(goal) }));
+  const summarize = (goals: readonly SavingsGoal[]) =>
+    goals.map((goal) => ({ goal, progress: progressPolicy.summarize(goal) }));
 
   return async () => {
     const result = await repository.list();

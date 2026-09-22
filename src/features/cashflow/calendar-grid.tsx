@@ -17,14 +17,32 @@ export function CalendarGrid({ days, monthLabel }: { days: CalendarDay[]; monthL
   return (
     <View accessibilityLabel={`${monthLabel} cashflow calendar`}>
       <View style={styles.weekLabels}>
-        {CASHFLOW_CALENDAR.weekdayLabels.map((day, index) => <AppText key={`${day}-${index}`} style={styles.weekLabel} tone="muted" variant="eyebrow">{day}</AppText>)}
+        {CASHFLOW_CALENDAR.weekdayLabels.map((day, index) => (
+          <AppText key={`${day}-${index}`} style={styles.weekLabel} tone="muted" variant="eyebrow">
+            {day}
+          </AppText>
+        ))}
       </View>
       <SurfaceCard padded={false}>
         <View style={styles.grid}>
           {days.map((day, index) => (
-            <View accessibilityLabel={`${day.label}${day.event ? `, ${day.event}` : ''}`} key={`${day.label}-${index}`} style={[styles.day, day.muted && styles.mutedDay, day.today && styles.today]}>
-              <AppText style={[styles.dayText, day.today && styles.todayText]} tone={day.muted ? 'muted' : day.today ? 'onPrimary' : 'default'}>{day.number}</AppText>
-              {day.event ? <View accessibilityElementsHidden style={[styles.dot, day.positive ? styles.incomeDot : styles.expenseDot]} /> : null}
+            <View
+              accessibilityLabel={`${day.label}${day.event ? `, ${day.event}` : ''}`}
+              key={`${day.label}-${index}`}
+              style={[styles.day, day.muted && styles.mutedDay, day.today && styles.today]}
+            >
+              <AppText
+                style={[styles.dayText, day.today && styles.todayText]}
+                tone={day.muted ? 'muted' : day.today ? 'onPrimary' : 'default'}
+              >
+                {day.number}
+              </AppText>
+              {day.event ? (
+                <View
+                  accessibilityElementsHidden
+                  style={[styles.dot, day.positive ? styles.incomeDot : styles.expenseDot]}
+                />
+              ) : null}
             </View>
           ))}
         </View>
@@ -37,7 +55,13 @@ const styles = StyleSheet.create({
   weekLabels: { flexDirection: 'row', paddingHorizontal: 13, paddingBottom: 8 },
   weekLabel: { flex: 1, textAlign: 'center' },
   grid: { flexDirection: 'row', flexWrap: 'wrap', padding: 8 },
-  day: { alignItems: 'center', aspectRatio: 1, borderRadius: 20, justifyContent: 'center', width: `${100 / 7}%` },
+  day: {
+    alignItems: 'center',
+    aspectRatio: 1,
+    borderRadius: 20,
+    justifyContent: 'center',
+    width: `${100 / 7}%`,
+  },
   mutedDay: { opacity: 0.35 },
   today: { backgroundColor: tokens.color.primary },
   dayText: { fontWeight: '600' },

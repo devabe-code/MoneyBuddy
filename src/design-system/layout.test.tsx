@@ -4,7 +4,11 @@ import { Screen, SectionHeader } from './layout';
 
 describe('layout components', () => {
   it('gives screen and section titles heading semantics', async () => {
-    await render(<Screen title="Goals"><SectionHeader title="Closest goal" /></Screen>);
+    await render(
+      <Screen title="Goals">
+        <SectionHeader title="Closest goal" />
+      </Screen>,
+    );
     expect(screen.getAllByRole('header')).toHaveLength(2);
   });
 

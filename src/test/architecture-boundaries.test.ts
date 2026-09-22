@@ -3,11 +3,18 @@ import path from 'node:path';
 
 type BoundaryRule = Readonly<{ forbidden: RegExp; root: string }>;
 
-const importSpecifierPattern = /(?:import|export)\s+(?:type\s+)?(?:[^'";]+?\s+from\s+)?['"]([^'"]+)['"]/g;
+const importSpecifierPattern =
+  /(?:import|export)\s+(?:type\s+)?(?:[^'";]+?\s+from\s+)?['"]([^'"]+)['"]/g;
 
 const rules: readonly BoundaryRule[] = [
-  { root: 'src/domain', forbidden: /(?:react-native|expo|@\/src\/(?:bootstrap|design-system|features|services|test))/ },
-  { root: 'src/services', forbidden: /@\/src\/(?:app|bootstrap|design-system|features|navigation|test)/ },
+  {
+    root: 'src/domain',
+    forbidden: /(?:react-native|expo|@\/src\/(?:bootstrap|design-system|features|services|test))/,
+  },
+  {
+    root: 'src/services',
+    forbidden: /@\/src\/(?:app|bootstrap|design-system|features|navigation|test)/,
+  },
   { root: 'src/features', forbidden: /@\/src\/(?:bootstrap|services|test\/fixtures)/ },
   { root: 'src/design-system', forbidden: /@\/src\/(?:bootstrap|domain|features|services|test)/ },
   { root: 'app', forbidden: /@\/src\/(?:domain|services)/ },
@@ -22,7 +29,10 @@ function productionFiles(directory: string): string[] {
 }
 
 function importSpecifiers(filePath: string) {
-  return Array.from(readFileSync(filePath, 'utf8').matchAll(importSpecifierPattern), (match) => match[1]);
+  return Array.from(
+    readFileSync(filePath, 'utf8').matchAll(importSpecifierPattern),
+    (match) => match[1],
+  );
 }
 
 describe('architecture import boundaries', () => {

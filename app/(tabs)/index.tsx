@@ -1,6 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 
-import { AppText, IconBadge, Screen, SectionHeader, SurfaceCard, TextLink } from '@/src/design-system/components';
+import {
+  AppText,
+  IconBadge,
+  Screen,
+  SectionHeader,
+  SurfaceCard,
+  TextLink,
+} from '@/src/design-system/components';
 import { tokens } from '@/src/design-system/tokens';
 import { CashflowEventRow, eventDividerStyle } from '@/src/features/cashflow/cashflow-event-row';
 import { GoalProgressCard } from '@/src/features/goals/goal-progress-card';
@@ -8,16 +15,26 @@ import { samplePlan } from '@/src/test/fixtures/sample-plan';
 
 export default function TodayScreen() {
   return (
-    <Screen eyebrow="SYNTHETIC SAMPLE PLAN" title="Good morning" subtitle="Here is what your plan is doing today.">
+    <Screen
+      eyebrow="SYNTHETIC SAMPLE PLAN"
+      title="Good morning"
+      subtitle="Here is what your plan is doing today."
+    >
       <SurfaceCard tone="accent">
         <View style={styles.cardHeading}>
           <View>
-            <AppText tone="muted" variant="label">Available after planned spending</AppText>
-            <AppText accessibilityLabel="1,240 dollars available" style={styles.heroAmount}>{samplePlan.availableThisMonth}</AppText>
+            <AppText tone="muted" variant="label">
+              Available after planned spending
+            </AppText>
+            <AppText accessibilityLabel="1,240 dollars available" style={styles.heroAmount}>
+              {samplePlan.availableThisMonth}
+            </AppText>
           </View>
           <IconBadge icon="sparkles" size={48} />
         </View>
-        <AppText tone="muted">You are on track to save {samplePlan.monthlySavings} this month.</AppText>
+        <AppText tone="muted">
+          You are on track to save {samplePlan.monthlySavings} this month.
+        </AppText>
       </SurfaceCard>
 
       <SectionHeader action="View calendar" href="/calendar" title="Coming up" />
@@ -38,5 +55,11 @@ export default function TodayScreen() {
 
 const styles = StyleSheet.create({
   cardHeading: { alignItems: 'flex-start', flexDirection: 'row', justifyContent: 'space-between' },
-  heroAmount: { color: tokens.color.ink, fontSize: 34, fontWeight: '800', letterSpacing: -1, marginVertical: 8 },
+  heroAmount: {
+    color: tokens.color.ink,
+    fontSize: 34,
+    fontWeight: '800',
+    letterSpacing: -1,
+    marginVertical: 8,
+  },
 });

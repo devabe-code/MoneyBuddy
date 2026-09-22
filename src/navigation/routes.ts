@@ -17,10 +17,38 @@ export const MONEYBUDDY_SCHEME = 'moneybuddy' as const;
 export const supportRoutes = Object.freeze({ statePreview: '/state-preview' as Href });
 
 export const coreRoutes: readonly CoreRoute[] = [
-  { key: 'today', title: 'Today', file: 'index', href: '/', icon: 'today-outline', activeIcon: 'today' },
-  { key: 'calendar', title: 'Calendar', file: 'calendar', href: '/calendar', icon: 'calendar-outline', activeIcon: 'calendar' },
-  { key: 'goals', title: 'Goals', file: 'goals', href: '/goals', icon: 'flag-outline', activeIcon: 'flag' },
-  { key: 'journey', title: 'Journey', file: 'journey', href: '/journey', icon: 'trail-sign-outline', activeIcon: 'trail-sign' },
+  {
+    key: 'today',
+    title: 'Today',
+    file: 'index',
+    href: '/',
+    icon: 'today-outline',
+    activeIcon: 'today',
+  },
+  {
+    key: 'calendar',
+    title: 'Calendar',
+    file: 'calendar',
+    href: '/calendar',
+    icon: 'calendar-outline',
+    activeIcon: 'calendar',
+  },
+  {
+    key: 'goals',
+    title: 'Goals',
+    file: 'goals',
+    href: '/goals',
+    icon: 'flag-outline',
+    activeIcon: 'flag',
+  },
+  {
+    key: 'journey',
+    title: 'Journey',
+    file: 'journey',
+    href: '/journey',
+    icon: 'trail-sign-outline',
+    activeIcon: 'trail-sign',
+  },
 ];
 
 export function resolveCoreRoute(input: string): CoreRoute | undefined {
@@ -28,7 +56,8 @@ export function resolveCoreRoute(input: string): CoreRoute | undefined {
 
   try {
     const url = new URL(path);
-    path = url.protocol === `${MONEYBUDDY_SCHEME}:` ? `/${url.hostname}${url.pathname}` : url.pathname;
+    path =
+      url.protocol === `${MONEYBUDDY_SCHEME}:` ? `/${url.hostname}${url.pathname}` : url.pathname;
   } catch {
     path = path.split(/[?#]/, 1)[0];
   }

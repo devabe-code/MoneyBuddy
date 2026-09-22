@@ -12,21 +12,31 @@ export type CommonStateExample = Readonly<{
   title: string;
 }>;
 
-export function CommonStatePreviewScreen({ examples }: { examples: readonly CommonStateExample[] }) {
+export function CommonStatePreviewScreen({
+  examples,
+}: {
+  examples: readonly CommonStateExample[];
+}) {
   const [announcement, setAnnouncement] = useState('');
 
   return (
     <Screen
       eyebrow="DESIGN SYSTEM"
       subtitle="Accessible synthetic examples for every shared app-state pattern."
-      title="App state preview">
+      title="App state preview"
+    >
       {examples.map((fixture) => (
         <CommonState
-          action={fixture.actionLabel ? {
-            accessibilityHint: `Demonstrates the ${fixture.kind} recovery action.`,
-            label: fixture.actionLabel,
-            onPress: () => setAnnouncement(`Synthetic action selected: ${fixture.actionLabel}.`),
-          } : undefined}
+          action={
+            fixture.actionLabel
+              ? {
+                  accessibilityHint: `Demonstrates the ${fixture.kind} recovery action.`,
+                  label: fixture.actionLabel,
+                  onPress: () =>
+                    setAnnouncement(`Synthetic action selected: ${fixture.actionLabel}.`),
+                }
+              : undefined
+          }
           key={fixture.id}
           kind={fixture.kind}
           message={fixture.message}
@@ -35,7 +45,12 @@ export function CommonStatePreviewScreen({ examples }: { examples: readonly Comm
         />
       ))}
       {announcement ? (
-        <AppText accessibilityLiveRegion="polite" accessibilityRole="summary" tone="muted" variant="caption">
+        <AppText
+          accessibilityLiveRegion="polite"
+          accessibilityRole="summary"
+          tone="muted"
+          variant="caption"
+        >
           {announcement}
         </AppText>
       ) : null}

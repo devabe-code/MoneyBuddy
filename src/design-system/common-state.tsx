@@ -33,17 +33,40 @@ export type CommonStateProps = Readonly<{
   title: string;
 }>;
 
-const statePresentation: Record<CommonStateKind, Readonly<{
-  background: string;
-  color: string;
-  icon: IconName;
-}>> = {
+const statePresentation: Record<
+  CommonStateKind,
+  Readonly<{
+    background: string;
+    color: string;
+    icon: IconName;
+  }>
+> = {
   empty: { icon: 'book-outline', background: tokens.color.infoSoft, color: tokens.color.info },
-  error: { icon: 'alert-circle-outline', background: tokens.color.dangerSoft, color: tokens.color.danger },
-  loading: { icon: 'hourglass-outline', background: tokens.color.infoSoft, color: tokens.color.info },
-  offline: { icon: 'cloud-offline-outline', background: tokens.color.warningSoft, color: tokens.color.warningInk },
-  partial: { icon: 'information-circle-outline', background: tokens.color.infoSoft, color: tokens.color.info },
-  stale: { icon: 'time-outline', background: tokens.color.warningSoft, color: tokens.color.warningInk },
+  error: {
+    icon: 'alert-circle-outline',
+    background: tokens.color.dangerSoft,
+    color: tokens.color.danger,
+  },
+  loading: {
+    icon: 'hourglass-outline',
+    background: tokens.color.infoSoft,
+    color: tokens.color.info,
+  },
+  offline: {
+    icon: 'cloud-offline-outline',
+    background: tokens.color.warningSoft,
+    color: tokens.color.warningInk,
+  },
+  partial: {
+    icon: 'information-circle-outline',
+    background: tokens.color.infoSoft,
+    color: tokens.color.info,
+  },
+  stale: {
+    icon: 'time-outline',
+    background: tokens.color.warningSoft,
+    color: tokens.color.warningInk,
+  },
 };
 
 export function CommonState({
@@ -63,14 +86,18 @@ export function CommonState({
         styles.container,
         presentation === 'panel' ? styles.panel : styles.inline,
         { backgroundColor: state.background },
-      ]}>
+      ]}
+    >
       <View
         accessible
         accessibilityLabel={accessibilityLabel}
         accessibilityLiveRegion={kind === 'error' ? 'assertive' : 'polite'}
-        accessibilityRole={kind === 'error' ? 'alert' : kind === 'loading' ? 'progressbar' : 'summary'}
+        accessibilityRole={
+          kind === 'error' ? 'alert' : kind === 'loading' ? 'progressbar' : 'summary'
+        }
         accessibilityState={kind === 'loading' ? { busy: true } : undefined}
-        style={styles.content}>
+        style={styles.content}
+      >
         <Ionicons
           accessibilityElementsHidden
           color={state.color}
@@ -79,9 +106,17 @@ export function CommonState({
           size={21}
         />
         <View style={styles.copy}>
-          <AppText style={{ color: state.color }} variant="title">{title}</AppText>
-          <AppText tone="muted" variant="caption">{message}</AppText>
-          {metadata ? <AppText style={{ color: state.color }} variant="caption">{metadata}</AppText> : null}
+          <AppText style={{ color: state.color }} variant="title">
+            {title}
+          </AppText>
+          <AppText tone="muted" variant="caption">
+            {message}
+          </AppText>
+          {metadata ? (
+            <AppText style={{ color: state.color }} variant="caption">
+              {metadata}
+            </AppText>
+          ) : null}
           {kind === 'loading' ? <LoadingPlaceholders /> : null}
         </View>
       </View>
@@ -97,8 +132,11 @@ export function CommonState({
             { borderColor: state.color },
             pressed && !action.disabled && styles.pressed,
             action.disabled && styles.disabled,
-          ]}>
-          <AppText style={{ color: state.color }} variant="label">{action.label}</AppText>
+          ]}
+        >
+          <AppText style={{ color: state.color }} variant="label">
+            {action.label}
+          </AppText>
         </Pressable>
       ) : null}
     </View>
@@ -110,7 +148,8 @@ function LoadingPlaceholders() {
     <View
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
-      style={styles.placeholders}>
+      style={styles.placeholders}
+    >
       <View style={[styles.placeholder, styles.placeholderWide]} />
       <View style={[styles.placeholder, styles.placeholderMedium]} />
       <View style={[styles.placeholder, styles.placeholderShort]} />

@@ -8,7 +8,19 @@ export type ExplainerContent = {
 };
 
 export const MONEYBUDDY_EXPLAINER_STEPS: readonly ExplainerContent[] = Object.freeze([
-  { icon: 'calendar-outline', title: 'Map your cashflow', copy: 'Expected pay, bills, and transfers become a dated plan.' },
-  { icon: 'options-outline', title: 'Compare strategies', copy: 'See how different saving choices change your target date.' },
-  { icon: 'trail-sign-outline', title: 'Follow the journey', copy: 'Capture milestones and understand why progress changed.' },
+  {
+    icon: 'calendar-outline',
+    title: 'Map your cashflow',
+    copy: 'Expected pay, bills, and transfers become a dated plan.',
+  },
+  {
+    icon: 'options-outline',
+    title: 'Compare strategies',
+    copy: 'See how different saving choices change your target date.',
+  },
+  {
+    icon: 'trail-sign-outline',
+    title: 'Follow the journey',
+    copy: 'Capture milestones and understand why progress changed.',
+  },
 ]);

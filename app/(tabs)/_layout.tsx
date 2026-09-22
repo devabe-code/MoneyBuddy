@@ -22,7 +22,8 @@ export default function TabLayout() {
           paddingTop: 8,
         },
         tabBarHideOnKeyboard: true,
-      }}>
+      }}
+    >
       {coreRoutes.map((route) => (
         <Tabs.Screen
           key={route.key}

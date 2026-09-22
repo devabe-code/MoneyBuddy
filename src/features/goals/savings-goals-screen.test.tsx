@@ -31,14 +31,22 @@ describe('SavingsGoalsScreen', () => {
     expect(screen.queryByRole('progressbar')).not.toBeOnTheScreen();
   });
 
-  it.each(['ready', 'stale', 'partial'] as const)('renders domain summaries in the %s state', async (kind) => {
-    await renderState({ items: [item], kind, updatedAt: '2026-09-18T12:00:00.000Z' });
-    expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 });
-    if (kind !== 'ready') expect(screen.getByRole('summary')).toBeOnTheScreen();
-  });
+  it.each(['ready', 'stale', 'partial'] as const)(
+    'renders domain summaries in the %s state',
+    async (kind) => {
+      await renderState({ items: [item], kind, updatedAt: '2026-09-18T12:00:00.000Z' });
+      expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 });
+      if (kind !== 'ready') expect(screen.getByRole('summary')).toBeOnTheScreen();
+    },
+  );
 
   it('retains cached summaries while offline', async () => {
-    await renderState({ items: [item], kind: 'offline', message: 'No connection.', updatedAt: '2026-09-18T12:00:00.000Z' });
+    await renderState({
+      items: [item],
+      kind: 'offline',
+      message: 'No connection.',
+      updatedAt: '2026-09-18T12:00:00.000Z',
+    });
     expect(screen.getByText('Showing the last synthetic snapshot.')).toBeOnTheScreen();
     expect(screen.getByText('Last updated Sep 18, 2026, 12:00 PM UTC')).toBeOnTheScreen();
     expect(screen.getByRole('progressbar')).toBeOnTheScreen();
@@ -48,7 +56,11 @@ describe('SavingsGoalsScreen', () => {
     const loadOverview = jest
       .fn<Promise<SavingsGoalOverviewState>, []>()
       .mockResolvedValueOnce({ kind: 'error', message: 'Safe failure.' })
-      .mockResolvedValueOnce({ items: [item], kind: 'ready', updatedAt: '2026-09-18T12:00:00.000Z' });
+      .mockResolvedValueOnce({
+        items: [item],
+        kind: 'ready',
+        updatedAt: '2026-09-18T12:00:00.000Z',
+      });
     await render(<SavingsGoalsScreen loadOverview={loadOverview} />);
     await waitFor(() => expect(screen.getByText('Unable to load goals')).toBeOnTheScreen());
 
@@ -56,13 +68,18 @@ describe('SavingsGoalsScreen', () => {
       fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
     });
 
-    await waitFor(() => expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }));
+    await waitFor(() =>
+      expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }),
+    );
     expect(loadOverview).toHaveBeenCalledTimes(2);
   });
 
   it('ignores an older request after the loader is replaced', async () => {
     let resolveOlderRequest: (state: SavingsGoalOverviewState) => void = () => undefined;
-    const olderLoader = () => new Promise<SavingsGoalOverviewState>((resolve) => { resolveOlderRequest = resolve; });
+    const olderLoader = () =>
+      new Promise<SavingsGoalOverviewState>((resolve) => {
+        resolveOlderRequest = resolve;
+      });
     const currentLoader = async (): Promise<SavingsGoalOverviewState> => ({
       items: [item],
       kind: 'ready',
@@ -71,15 +88,25 @@ describe('SavingsGoalsScreen', () => {
     const view = await render(<SavingsGoalsScreen loadOverview={olderLoader} />);
 
     await view.rerender(<SavingsGoalsScreen loadOverview={currentLoader} />);
-    await waitFor(() => expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }));
-    await act(async () => { resolveOlderRequest({ kind: 'error', message: 'Outdated failure.' }); });
+    await waitFor(() =>
+      expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 }),
+    );
+    await act(async () => {
+      resolveOlderRequest({ kind: 'error', message: 'Outdated failure.' });
+    });
 
     expect(screen.queryByText('Outdated failure.')).not.toBeOnTheScreen();
     expect(screen.getByRole('progressbar')).toHaveAccessibilityValue({ now: 62 });
   });
 
   it('converts unexpected repository rejection into a safe error state', async () => {
-    await render(<SavingsGoalsScreen loadOverview={async () => { throw new Error('Sensitive adapter detail'); }} />);
+    await render(
+      <SavingsGoalsScreen
+        loadOverview={async () => {
+          throw new Error('Sensitive adapter detail');
+        }}
+      />,
+    );
     await waitFor(() => expect(screen.getByText('Unable to load goals')).toBeOnTheScreen());
     expect(screen.queryByText('Sensitive adapter detail')).not.toBeOnTheScreen();
   });
